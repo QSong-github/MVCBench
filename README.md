@@ -82,6 +82,62 @@ MVCBench leverages over one million paired observations across transcriptomic an
 
 ---
 
+
+## 🧩 Embedding Extraction
+
+MVCBench provides a unified and easy-to-use interface to extract embeddings using state-of-the-art foundation models.
+
+### Molecular Embeddings (e.g., UniMol V2)
+
+You can easily extract molecular features from SMILES strings using our unified `MoleculeEncoder` wrapper.
+
+```python
+import torch
+from mvcbench.encoders import MoleculeEncoder
+
+# Initialize the encoder (e.g., UniMol V2, KPGT, Chemprop)
+encoder = MoleculeEncoder(model_name="UniMolV2")
+
+# Input: Single SMILES or a list of SMILES
+smiles_list = [
+    "CC(=O)OC1=CC=CC=C1C(=O)O",  # Aspirin
+    "CN1C=NC2=C1C(=O)N(C(=O)N2C)C" # Caffeine
+]
+
+# Extract embeddings
+# The encoder automatically handles tokenization and device placement
+embeddings = encoder.encode(smiles_list)
+
+print(f"Embedding shape: {embeddings.shape}")
+# Output: torch.Size([2, 1024]) (Dimension depends on the specific model)
+
+```
+
+### Gene Embeddings (e.g., STATE)
+
+Similarly, extract single-cell representations from gene expression profiles using the `GeneEncoder` wrapper.
+
+```python
+import torch
+from mvcbench.encoders import GeneEncoder
+
+# Initialize the encoder (e.g., STATE, scGPT, Geneformer)
+encoder = GeneEncoder(model_name="STATE")
+
+# Input: Gene expression tensor (batch_size, num_genes)
+# Note: MVCBench handles the gene vocabulary alignment automatically
+gene_expression = torch.randn(4, 19264) # Example normalized expression data
+
+# Extract cell-level embeddings
+cell_embeddings = encoder.encode(gene_expression)
+
+print(f"Embedding shape: {cell_embeddings.shape}")
+# Output: torch.Size([4, 512])
+
+```
+
+
+
 ## 🚀 Getting Started
 
 ### Installation
