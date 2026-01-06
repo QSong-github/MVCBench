@@ -1,15 +1,6 @@
 # MVCBench
-MVCBench: a multimodal benchmark for drug induced virtual cell phenotypes
 
-
-## Datasets
-### Gene Expression datasets: 
-  - <a name=""></a> **[CIGS]** High-Throughput Profiling of Chemical-Induced Gene Expression across 93,644 Perturbations (**Nature Methods 2025**) [[paper](https://www.nature.com/articles/s41592-025-02781-5)]   [[Dataset Link](https://cigs.iomicscloud.com/)]   [[code](https://github.com/Wang-lab302/CIGS)]![GitHub stars](https://img.shields.io/github/stars/Wang-lab302/CIGS.svg?logo=github&label=Stars)
-  - <a name=""></a> **[Tahoe-100M]** Tahoe-100M: A Giga-Scale Single-Cell Perturbation Atlas for Context-Dependent Gene Function and Cellular Modeling (**bioRxiv 2025**) [[paper](https://www.biorxiv.org/content/10.1101/2025.02.20.639398v1)]  [[Link](https://huggingface.co/datasets/tahoebio/Tahoe-100M)]  [[code](https://github.com/ArcInstitute/arc-virtual-cell-atlas)]![GitHub stars](https://img.shields.io/github/stars/ArcInstitute/arc-virtual-cell-atlas.svg?logo=github&label=Stars)
-  - <a name=""></a> **[LINCS 2020]** Expanded CMap LINCS Resource 2020 [[Link](https://clue.io/data/CMap2020#LINCS2020)]
-
-### Cell Painting datasets:
-  - <a name=""></a> **[cpg0016 & cpg0003]** [[Link](https://registry.opendata.aws/cellpainting-gallery/)]   [[Datasets Overview](https://github.com/broadinstitute/cellpainting-gallery/blob/main/README.md)]   [[AWS Overview](https://open.quiltdata.com/b/cellpainting-gallery/tree/)]   [[Bray Dataset](https://github.com/gigascience/paper-bray2017/tree/master)]
+MVCBench: a multimodal benchmark for drug-induced virtual cell phenotypes
 
 
 ## Molecule Encoder
@@ -44,6 +35,17 @@ MVCBench: a multimodal benchmark for drug induced virtual cell phenotypes
 - <a name=""></a> **[Cell2Sentence]** Cell2Sentence: Teaching Large Language Models the Language of Biology (**ICML 2024 Poster**) [[paper](https://icml.cc/virtual/2024/poster/34580)]   [[code](https://github.com/vandijklab/cell2sentence)]![GitHub stars](https://img.shields.io/github/stars/vandijklab/cell2sentence.svg?logo=github&label=Stars)
 
 - <a name=""></a> **[STATE]** Predicting Cellular Responses to Perturbation across Diverse Contexts with STATE (**bioRxiv 2025**) [[paper](https://www.biorxiv.org/content/10.1101/2025.06.26.661135v2)]   [[code](https://github.com/ArcInstitute/state)]![GitHub stars](https://img.shields.io/github/stars/ArcInstitute/state.svg?logo=github&label=Stars)
+
+
+## Datasets
+### Gene Expression datasets: 
+  - <a name=""></a> **[CIGS]** High-Throughput Profiling of Chemical-Induced Gene Expression across 93,644 Perturbations (**Nature Methods 2025**) [[paper](https://www.nature.com/articles/s41592-025-02781-5)]   [[Dataset Link](https://cigs.iomicscloud.com/)]   [[code](https://github.com/Wang-lab302/CIGS)]![GitHub stars](https://img.shields.io/github/stars/Wang-lab302/CIGS.svg?logo=github&label=Stars)
+  - <a name=""></a> **[Tahoe-100M]** Tahoe-100M: A Giga-Scale Single-Cell Perturbation Atlas for Context-Dependent Gene Function and Cellular Modeling (**bioRxiv 2025**) [[paper](https://www.biorxiv.org/content/10.1101/2025.02.20.639398v1)]  [[Link](https://huggingface.co/datasets/tahoebio/Tahoe-100M)]  [[code](https://github.com/ArcInstitute/arc-virtual-cell-atlas)]![GitHub stars](https://img.shields.io/github/stars/ArcInstitute/arc-virtual-cell-atlas.svg?logo=github&label=Stars)
+  - <a name=""></a> **[LINCS 2020]** Expanded CMap LINCS Resource 2020 [[Link](https://clue.io/data/CMap2020#LINCS2020)]
+
+### Cell Painting datasets:
+  - <a name=""></a> **[cpg0016 & cpg0003]** [[Link](https://registry.opendata.aws/cellpainting-gallery/)]   [[Datasets Overview](https://github.com/broadinstitute/cellpainting-gallery/blob/main/README.md)]   [[AWS Overview](https://open.quiltdata.com/b/cellpainting-gallery/tree/)]   [[Bray Dataset](https://github.com/gigascience/paper-bray2017/tree/master)]
+
 
 
 ### Getting Started
