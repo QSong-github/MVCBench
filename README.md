@@ -1,88 +1,147 @@
-# MVCBench
+# MVCBench: A Multimodal Benchmark for Drug-induced Virtual Cell Phenotypes
 
-**MVCBench: a multimodal benchmark for drug-induced virtual cell phenotypes**
+[![Python](https://img.shields.io/badge/Python-3.8%2B-blue)](https://www.python.org/)
+[![License](https://img.shields.io/badge/License-MIT-green)](./LICENSE)
+[![Preprint](https://img.shields.io/badge/Preprint-bioRxiv-red)](https://www.biorxiv.org/) 
+**MVCBench** is a unified multimodal framework designed to rigorously assess representation learning for virtual cell phenotyping. It serves as a methodological foundation for developing the next generation of robust and generalizable virtual cell models.
 
-
-## Molecule Representation Methods 
-
-- <a name=""></a> **[KPGT]** A knowledge-guided pre-training framework for improving molecular representation learning (**Nat. Commun. 2023**) [[paper](https://www.nature.com/articles/s41467-023-43214-1)] [[code](https://github.com/lihan97/kpgt)] ![GitHub stars](https://img.shields.io/github/stars/lihan97/kpgt.svg?logo=github&label=Stars)
-
-- <a name=""></a> **[InfoAlign]** Learning Molecular Representation in a Cell (**arXiv 2024**) [[paper](https://arxiv.org/abs/2406.12056)] [[code](https://github.com/liugangcode/InfoAlign)] ![GitHub stars](https://img.shields.io/github/stars/liugangcode/InfoAlign.svg?logo=github&label=Stars)
-
-- <a name=""></a> **[GeminiMol]** Conformational Space Profiling Enhances Generic Molecular Representation for AI‐Powered Ligand‐Based Drug Discovery (**Adv. Sci. 2024**) [[paper](https://advanced.onlinelibrary.wiley.com/doi/10.1002/advs.202403998)] [[code](https://github.com/Wang-Lin-boop/GeminiMol)] ![GitHub stars](https://img.shields.io/github/stars/Wang-Lin-boop/GeminiMol.svg?logo=github&label=Stars)
-
-- <a name=""></a> **[Ouroboros]** Directed Chemical Evolution via Navigating Molecular Encoding Space (**bioRxiv 2025**) [[paper](https://www.biorxiv.org/content/10.1101/2025.03.18.643899v1)] [[code](https://github.com/Wang-Lin-boop/ouroboros)] ![GitHub stars](https://img.shields.io/github/stars/Wang-Lin-boop/ouroboros.svg?logo=github&label=Stars)
-
-- <a name=""></a> **[Mole-BERT]** Mole-BERT: Rethinking Pre-training Graph Neural Networks for Molecules (**ICLR 2023**) [[paper](https://openreview.net/forum?id=jevY-DtiZTR)] [[code](https://github.com/junxia97/Mole-BERT)] ![GitHub stars](https://img.shields.io/github/stars/junxia97/Mole-BERT.svg?logo=github&label=Stars)
-
-- <a name=""></a> **[ChemBERTa2]** ChemBERTa-2: Towards Chemical Foundation Models (**arXiv 2022**) [[paper](https://arxiv.org/abs/2209.01712)] [[code](https://github.com/seyonechithrananda/bert-loves-chemistry)] ![GitHub stars](https://img.shields.io/github/stars/seyonechithrananda/bert-loves-chemistry.svg?logo=github&label=Stars)
-
-- <a name=""></a> **[MolT5]** Translation between Molecules and Natural Language (**EMNLP 2022**) [[paper](https://arxiv.org/abs/2204.11817)] [[code](https://github.com/blender-nlp/molt5)] ![GitHub stars](https://img.shields.io/github/stars/blender-nlp/molt5.svg?logo=github&label=Stars)
-
-- <a name=""></a> **[Chemprop]** Chemprop: A Machine Learning Package for Chemical Property Prediction (**J. Chem. Inf. Model. 2024**) [[paper](https://pubs.acs.org/doi/10.1021/acs.jcim.3c01250)] [[code](https://github.com/chemprop/chemprop)] ![GitHub stars](https://img.shields.io/github/stars/chemprop/chemprop.svg?logo=github&label=Stars)
-
-- <a name=""></a> **[MolCLR]** Molecular contrastive learning of representations via graph neural networks (**Nat. Mach. Intell. 2022**) [[paper](https://www.nature.com/articles/s42256-022-00447-x)] [[code](https://github.com/yuyangw/MolCLR)] ![GitHub stars](https://img.shields.io/github/stars/yuyangw/MolCLR.svg?logo=github&label=Stars)
-
-- <a name=""></a> **[UniMol]** Uni-Mol: A Universal 3D Molecular Representation Learning Framework (**ICLR 2023**) [[paper](https://openreview.net/forum?id=6K2RM6wVqKu)] [[code](https://github.com/deepmodeling/Uni-Mol)] ![GitHub stars](https://img.shields.io/github/stars/deepmodeling/Uni-Mol.svg?logo=github&label=Stars)
-
-- <a name=""></a> **[UniMol V2]** Uni-Mol2: Exploring Molecular Pretraining Model at Scale (**arXiv 2024**) [[paper](https://arxiv.org/abs/2406.14969)] [[code](https://github.com/deepmodeling/Uni-Mol/tree/main/unimol2)] ![GitHub stars](https://img.shields.io/github/stars/deepmodeling/Uni-Mol.svg?logo=github&label=Stars)
+[**📖 Read the Paper**](link_to_your_paper) | [**🤗 HuggingFace Datasets**](link_to_your_hf) | [**🚀 Getting Started**](#getting-started)
 
 ---
 
+## 🌟 Overview
 
-## Gene Representation Methods (single-cell Foundation Models)
+Realizing a holistic **Virtual Cell** capable of accurately predicting how **chemical perturbations** reshape cellular phenotypes across transcriptional and morphological landscapes is a central goal in drug discovery. **MVCBench** overcomes the limitations of fragmented, modality-specific benchmarks by establishing a standardized methodology involving:
 
-- <a name=""></a> **[Geneformer]** Transfer learning enables predictions in network biology (**Nature 2023**) [[paper](https://www.nature.com/articles/s41586-023-06139-9)] [[code](https://huggingface.co/ctheodoris/Geneformer)] ⭐ 253 likes
+- **1 Million+** paired observations.
+- **22 Representation Models** benchmarked (11 Molecular + 11 Single-cell FMs).
+- **6 Generalization Tasks** ranging from in-domain to cross-dataset transfer.
+- **Multimodal Fusion** protocols and rigoros evaluation metrics (including the **Composite Performance Score**).
 
-- <a name=""></a> **[tGPT]** Generative pretraining from large-scale transcriptomes: Implications for single-cell deciphering and clinical translation (**bioRxiv 2022**) [[paper](https://www.biorxiv.org/content/10.1101/2022.01.31.478596v1.full)] [[code](https://github.com/deeplearningplus/tGPT)]![GitHub stars](https://img.shields.io/github/stars/deeplearningplus/tGPT.svg?logo=github&label=Stars)
+### 🗝️ Key Insights
+1.  **Performance Asymmetry:** Advanced molecular representations (e.g., UniMolV2, KPGT) excel in morphology but show marginal gains in gene expression tasks compared to simple fingerprints.
+2.  **The Foundation Model Paradox:** While perturbation-specific models like **STATE** lead the field, many high-capacity scFMs are more susceptible to technical shifts (batch effects) than simple baselines.
+3.  **Generalization Bottleneck:** Out-of-distribution generalization remains the primary challenge, with performance deteriorating sharply in cross-dataset scenarios.
+4.  **Multimodal Synergy:** Gene expression and morphology provide orthogonal, synergistic contexts. **Late-stage fusion** and **fixed-ratio loss weighting** consistently outperform complex adaptive schemes.
 
-- <a name=""></a> **[UCE]** Universal Cell Embeddings: A Foundation Model for Cell Biology (**bioRxiv 2023**) [[paper](https://www.biorxiv.org/content/10.1101/2023.11.28.568918v2)] [[code](https://github.com/snap-stanford/uce)]![GitHub stars](https://img.shields.io/github/stars/snap-stanford/uce.svg?logo=github&label=Stars)
+---
 
-- <a name=""></a> **[scBERT]** scBERT as a large-scale pretrained deep language model for cell type annotation of single-cell RNA-seq data (**Nat. Mach. Intell. 2022**) [[paper](https://www.nature.com/articles/s42256-022-00534-z)] [[code](https://github.com/TencentAILabHealthcare/scBERT)]![GitHub stars](https://img.shields.io/github/stars/TencentAILabHealthcare/scBERT.svg?logo=github&label=Stars)
+## 🧬 Benchmark Zoo
 
-- <a name=""></a> **[CellPLM]** CellPLM: Pre-training of Cell Language Model Beyond Single Cells (**ICLR 2024**) [[paper](https://openreview.net/forum?id=BKXvPDekud)] [[code](https://github.com/OmicsML/CellPLM)]![GitHub stars](https://img.shields.io/github/stars/OmicsML/CellPLM.svg?logo=github&label=Stars)
+We evaluate widely used Drug Molecular Representation methods and Gene Representation methods (Single-cell Foundation Models).
 
-- <a name=""></a> **[OpenBioMed]** Large-Scale Cell Representation Learning via Divide-and-Conquer Contrastive Learning (**arXiv 2023**) [[paper](https://arxiv.org/pdf/2306.04371)] [[code](https://github.com/PharMolix/OpenBioMed)]![GitHub stars](https://img.shields.io/github/stars/PharMolix/OpenBioMed.svg?logo=github&label=Stars)
+### 🧪 Molecule Representation Methods
 
-- <a name=""></a> **[scGPT]** scGPT: toward building a foundation model for single-cell multi-omics using generative AI (**Nat. Methods 2024**) [[paper](https://www.nature.com/articles/s41592-024-02201-0)] [[code](https://github.com/bowang-lab/scGPT)]![GitHub stars](https://img.shields.io/github/stars/bowang-lab/scGPT.svg?logo=github&label=Stars)
+| Model | Paper | Code | Stars |
+| :--- | :--- | :--- | :--- |
+| **KPGT** | [Nat. Commun. 2023](https://www.nature.com/articles/s41467-023-43214-1) | [GitHub](https://github.com/lihan97/kpgt) | ![Stars](https://img.shields.io/github/stars/lihan97/kpgt.svg?style=social) |
+| **InfoAlign** | [arXiv 2024](https://arxiv.org/abs/2406.12056) | [GitHub](https://github.com/liugangcode/InfoAlign) | ![Stars](https://img.shields.io/github/stars/liugangcode/InfoAlign.svg?style=social) |
+| **GeminiMol** | [Adv. Sci. 2024](https://advanced.onlinelibrary.wiley.com/doi/10.1002/advs.202403998) | [GitHub](https://github.com/Wang-Lin-boop/GeminiMol) | ![Stars](https://img.shields.io/github/stars/Wang-Lin-boop/GeminiMol.svg?style=social) |
+| **Ouroboros** | [bioRxiv 2025](https://www.biorxiv.org/content/10.1101/2025.03.18.643899v1) | [GitHub](https://github.com/Wang-Lin-boop/ouroboros) | ![Stars](https://img.shields.io/github/stars/Wang-Lin-boop/ouroboros.svg?style=social) |
+| **Mole-BERT** | [ICLR 2023](https://openreview.net/forum?id=jevY-DtiZTR) | [GitHub](https://github.com/junxia97/Mole-BERT) | ![Stars](https://img.shields.io/github/stars/junxia97/Mole-BERT.svg?style=social) |
+| **ChemBERTa2**| [arXiv 2022](https://arxiv.org/abs/2209.01712) | [GitHub](https://github.com/seyonechithrananda/bert-loves-chemistry) | ![Stars](https://img.shields.io/github/stars/seyonechithrananda/bert-loves-chemistry.svg?style=social) |
+| **MolT5** | [EMNLP 2022](https://arxiv.org/abs/2204.11817) | [GitHub](https://github.com/blender-nlp/molt5) | ![Stars](https://img.shields.io/github/stars/blender-nlp/molt5.svg?style=social) |
+| **Chemprop** | [J. Chem. Inf. Model. 2024](https://pubs.acs.org/doi/10.1021/acs.jcim.3c01250) | [GitHub](https://github.com/chemprop/chemprop) | ![Stars](https://img.shields.io/github/stars/chemprop/chemprop.svg?style=social) |
+| **MolCLR** | [Nat. Mach. Intell. 2022](https://www.nature.com/articles/s42256-022-00447-x) | [GitHub](https://github.com/yuyangw/MolCLR) | ![Stars](https://img.shields.io/github/stars/yuyangw/MolCLR.svg?style=social) |
+| **UniMol** | [ICLR 2023](https://openreview.net/forum?id=6K2RM6wVqKu) | [GitHub](https://github.com/deepmodeling/Uni-Mol) | ![Stars](https://img.shields.io/github/stars/deepmodeling/Uni-Mol.svg?style=social) |
+| **UniMol V2** | [arXiv 2024](https://arxiv.org/abs/2406.14969) | [GitHub](https://github.com/deepmodeling/Uni-Mol/tree/main/unimol2) | ![Stars](https://img.shields.io/github/stars/deepmodeling/Uni-Mol.svg?style=social) |
 
-- <a name=""></a> **[scFoundation]** Large-scale foundation model on single-cell transcriptomics (**Nat. Methods 2024**) [[paper](https://www.nature.com/articles/s41592-024-02305-7)] [[code](https://github.com/biomap-research/scFoundation)]![GitHub stars](https://img.shields.io/github/stars/biomap-research/scFoundation.svg?logo=github&label=Stars)
+### 🧬 Gene Representation Methods (scFMs)
 
-- <a name=""></a> **[SCimilarity]** A Cell Atlas Foundation Model for Scalable Search of Similar Human Cells (**Nature 2025**) [[paper](https://doi.org/10.1038/s41586-024-08411-y)] [[code](https://github.com/Genentech/scimilarity)]![GitHub stars](https://img.shields.io/github/stars/Genentech/scimilarity.svg?logo=github&label=Stars)
+| Model | Paper | Code | Stars |
+| :--- | :--- | :--- | :--- |
+| **Geneformer** | [Nature 2023](https://www.nature.com/articles/s41586-023-06139-9) | [HuggingFace](https://huggingface.co/ctheodoris/Geneformer) | ⭐ 253 |
+| **tGPT** | [bioRxiv 2022](https://www.biorxiv.org/content/10.1101/2022.01.31.478596v1.full) | [GitHub](https://github.com/deeplearningplus/tGPT) | ![Stars](https://img.shields.io/github/stars/deeplearningplus/tGPT.svg?style=social) |
+| **UCE** | [bioRxiv 2023](https://www.biorxiv.org/content/10.1101/2023.11.28.568918v2) | [GitHub](https://github.com/snap-stanford/uce) | ![Stars](https://img.shields.io/github/stars/snap-stanford/uce.svg?style=social) |
+| **scBERT** | [Nat. Mach. Intell. 2022](https://www.nature.com/articles/s42256-022-00534-z) | [GitHub](https://github.com/TencentAILabHealthcare/scBERT) | ![Stars](https://img.shields.io/github/stars/TencentAILabHealthcare/scBERT.svg?style=social) |
+| **CellPLM** | [ICLR 2024](https://openreview.net/forum?id=BKXvPDekud) | [GitHub](https://github.com/OmicsML/CellPLM) | ![Stars](https://img.shields.io/github/stars/OmicsML/CellPLM.svg?style=social) |
+| **OpenBioMed** | [arXiv 2023](https://arxiv.org/pdf/2306.04371) | [GitHub](https://github.com/PharMolix/OpenBioMed) | ![Stars](https://img.shields.io/github/stars/PharMolix/OpenBioMed.svg?style=social) |
+| **scGPT** | [Nat. Methods 2024](https://www.nature.com/articles/s41592-024-02201-0) | [GitHub](https://github.com/bowang-lab/scGPT) | ![Stars](https://img.shields.io/github/stars/bowang-lab/scGPT.svg?style=social) |
+| **scFoundation**| [Nat. Methods 2024](https://www.nature.com/articles/s41592-024-02305-7) | [GitHub](https://github.com/biomap-research/scFoundation)| ![Stars](https://img.shields.io/github/stars/biomap-research/scFoundation.svg?style=social) |
+| **SCimilarity** | [Nature 2025](https://doi.org/10.1038/s41586-024-08411-y) | [GitHub](https://github.com/Genentech/scimilarity) | ![Stars](https://img.shields.io/github/stars/Genentech/scimilarity.svg?style=social) |
+| **Cell2Sentence**| [ICML 2023](https://icml.cc/virtual/2024/poster/34580) | [GitHub](https://github.com/vandijklab/cell2sentence) | ![Stars](https://img.shields.io/github/stars/vandijklab/cell2sentence.svg?style=social) |
+| **STATE** | [bioRxiv 2025](https://www.biorxiv.org/content/10.1101/2025.06.26.661135v2) | [GitHub](https://github.com/ArcInstitute/state) | ![Stars](https://img.shields.io/github/stars/ArcInstitute/state.svg?style=social) |
 
-- <a name=""></a> **[Cell2Sentence]** Cell2Sentence: Teaching Large Language Models the Language of Biology (**ICML 2023**) [[paper](https://icml.cc/virtual/2024/poster/34580)] [[code](https://github.com/vandijklab/cell2sentence)]![GitHub stars](https://img.shields.io/github/stars/vandijklab/cell2sentence.svg?logo=github&label=Stars)
+---
 
-- <a name=""></a> **[STATE]** Predicting Cellular Responses to Perturbation across Diverse Contexts with STATE (**bioRxiv 2025**) [[paper](https://www.biorxiv.org/content/10.1101/2025.06.26.661135v2)] [[code](https://github.com/ArcInstitute/state)]![GitHub stars](https://img.shields.io/github/stars/ArcInstitute/state.svg?logo=github&label=Stars)
+## 💾 Datasets
 
-- <a name=""></a> **[SCimilarity]** A Cell Atlas Foundation Model for Scalable Search of Similar Human Cells (**Nature 2024**) [[paper](https://doi.org/10.1038/s41586-024-08411-y)]   [[code](https://github.com/Genentech/scimilarity)]![GitHub stars](https://img.shields.io/github/stars/Genentech/scimilarity.svg?logo=github&label=Stars)
+MVCBench leverages over one million paired observations across transcriptomic and morphological landscapes.
 
+### Gene Expression
+- **[CIGS]** (Nat. Methods 2025) - [Dataset Link](https://cigs.iomicscloud.com/)
+- **[Tahoe-100M]** (bioRxiv 2025) - [HuggingFace](https://huggingface.co/datasets/tahoebio/Tahoe-100M)
+- **[LINCS 2020]** - [Clue.io](https://clue.io/data/CMap2020#LINCS2020)
 
+### Cell Morphology
+- **[cpg0016 & cpg0003]** (Cell Painting Gallery) - [AWS Registry](https://registry.opendata.aws/cellpainting-gallery/)
 
-## Datasets
-### Gene Expression datasets: 
-  - <a name=""></a> **[CIGS]** High-Throughput Profiling of Chemical-Induced Gene Expression across 93,644 Perturbations (**Nature Methods 2025**) [[paper](https://www.nature.com/articles/s41592-025-02781-5)]   [[Dataset Link](https://cigs.iomicscloud.com/)]   [[code](https://github.com/Wang-lab302/CIGS)]![GitHub stars](https://img.shields.io/github/stars/Wang-lab302/CIGS.svg?logo=github&label=Stars)
-  - <a name=""></a> **[Tahoe-100M]** Tahoe-100M: A Giga-Scale Single-Cell Perturbation Atlas for Context-Dependent Gene Function and Cellular Modeling (**bioRxiv 2025**) [[paper](https://www.biorxiv.org/content/10.1101/2025.02.20.639398v1)]  [[Link](https://huggingface.co/datasets/tahoebio/Tahoe-100M)]  [[code](https://github.com/ArcInstitute/arc-virtual-cell-atlas)]![GitHub stars](https://img.shields.io/github/stars/ArcInstitute/arc-virtual-cell-atlas.svg?logo=github&label=Stars)
-  - <a name=""></a> **[LINCS 2020]** Expanded CMap LINCS Resource 2020 [[Link](https://clue.io/data/CMap2020#LINCS2020)]
+### Multimodal (Paired)
+- **CDRP-BBBC047-Bray** & **CDRPBIO-BBBC036-Bray** - Available via the [MVCBench HuggingFace](link_to_your_hf).
 
-### Cell Painting datasets:
-  - <a name=""></a> **[cpg0016 & cpg0003]** [[Link](https://registry.opendata.aws/cellpainting-gallery/)]   [[Datasets Overview](https://github.com/broadinstitute/cellpainting-gallery/blob/main/README.md)]   [[AWS Overview](https://open.quiltdata.com/b/cellpainting-gallery/tree/)]   [[Bray Dataset](https://github.com/gigascience/paper-bray2017/tree/master)]
+---
 
+## 🚀 Getting Started
 
+### Installation
 
-### Getting Started
+```bash
+# Clone the repository
+git clone [https://github.com/QSong-github/MVCBench.git](https://github.com/QSong-github/MVCBench.git)
+cd MVCBench
 
+# Create a virtual environment
+conda create -n mvcbench python=3.9
+conda activate mvcbench
 
-### Reference
+# Install dependencies
+pip install -r requirements.txt
+
 ```
-[1].Shen, H. et al. Generative pretraining from large-scale transcriptomes: Implications for single-cell deciphering and clinical translation. bioRxiv, 2022.2001. 2031.478596 (2022).
-[2].Yang, F. et al. scBERT as a large-scale pretrained deep language model for cell type annotation of single-cell RNA-seq data. Nature Machine Intelligence 4, 852-866 (2022).
-[3].Theodoris, C.V. et al. Transfer learning enables predictions in network biology. Nature 618, 616-624 (2023).
-[4].Zhao, S., Zhang, J. & Nie, Z. Large-scale cell representation learning via divide-and-conquer contrastive learning. arXiv preprint arXiv:2306.04371 (2023).
-[5].Hao, M. et al. Large-scale foundation model on single-cell transcriptomics. Nature Methods, 1-11 (2024).
-[6].Cui, H. et al. scGPT: toward building a foundation model for single-cell multi-omics using generative AI. Nature Methods, 1-11 (2024).
-[7].Wen, H. et al. CellPLM: pre-training of cell language model beyond single cells. bioRxiv, 2023.2010. 2003.560734 (2023).
-[8].Rosen, Y. et al. Universal cell embeddings: A foundation model for cell biology. bioRxiv, 2023.2011. 2028.568918 (2023).
-[9].AI@Meta Llama 3 Model Card. https://huggingface.co/meta-llama/Meta-Llama-3-8B (2024).
-[10].OpenAI GPT-4o mini. https://openai.com/index/gpt-4o-mini-advancing-cost-efficient-intelligence/ (2024).
+
+### Usage
+
+Run a basic benchmark task (e.g., drug-induced gene expression prediction):
+
+```bash
+python main.py --task gene_prediction \
+               --molecule_encoder UniMolV2 \
+               --gene_encoder STATE \
+               --dataset LINCS2020 \
+               --split leave_smiles_out
+
 ```
 
+For multimodal fusion experiments:
+
+```bash
+python main.py --task multimodal_fusion \
+               --fusion_strategy late_fusion \
+               --loss_weight fixed_ratio
+
+```
+
+---
+
+## 🖊️ Citation
+
+If you find MVCBench useful for your research, please cite our paper:
+
+```bibtex
+@article{li2025mvcbench,
+  title={MVCBench: A Multimodal Benchmark for Drug-induced Virtual Cell Phenotypes},
+  author={Li, Bo and Wang, Qing and Wang, Shihang and Zhang, Bob and Zhou, Minghao and Peng, Yuzhong and Liu, Chengliang and Li, Mengran and Tang, Ziyang and Yao, Xiaojun and Deng, Chuxia and Song, Qianqian},
+  journal={bioRxiv},
+  year={2025},
+  publisher={Cold Spring Harbor Laboratory}
+}
+
+```
+
+## 📧 Contact
+
+For any questions or inquiries, please open an issue or contact:
+
+* **Bo Li**: Boom985426@gmail.com
+* **Qianqian Song**: qsong1@ufl.edu
+* **Bob Zhang**: bobzhang@um.edu.mo
