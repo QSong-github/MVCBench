@@ -87,7 +87,7 @@ MVCBench leverages over one million paired observations across transcriptomic an
 
 ```bash
 # Clone the repository
-git clone [https://github.com/QSong-github/MVCBench.git](https://github.com/QSong-github/MVCBench.git)
+git clone https://github.com/QSong-github/MVCBench.git
 cd MVCBench
 
 # Create a virtual environment
