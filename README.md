@@ -6,7 +6,7 @@
 
 **MVCBench** is a unified multimodal framework designed to rigorously assess representation learning for virtual cell phenotyping. It serves as a methodological foundation for developing the next generation of robust and generalizable virtual cell models.
 
-[**📖 Read the Paper**](link_to_your_paper) | [**🤗 HuggingFace Datasets**](link_to_your_hf) | [**🚀 Getting Started**](#getting-started)
+[**📖 Read the Paper**](link_to_your_paper) | [**🤗 HuggingFace Datasets**](https://huggingface.co/datasets/Boom5426/MVCBench) | [**🚀 Getting Started**](#getting-started)
 
 ---
 
@@ -80,7 +80,7 @@ MVCBench leverages over one million paired observations across transcriptomic an
 ### Multimodal (Paired)
 - **CDRP-BBBC047-Bray** & **CDRPBIO-BBBC036-Bray** - Available via the [MVCBench HuggingFace](link_to_your_hf).
 
-The proposed dataset can be download at [MVCBench HuggingFace](link_to_your_hf).
+The preprocessed dataset used in this paper is available at [MVCBench HuggingFace](https://huggingface.co/datasets/Boom5426/MVCBench).
 ---
 
 
