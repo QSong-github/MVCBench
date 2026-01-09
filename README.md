@@ -118,24 +118,16 @@ print(f"Embedding shape: {embeddings.shape}")
 
 ### Gene Embeddings (e.g., STATE)
 
-Similarly, extract single-cell representations from gene expression profiles using the `GeneEncoder` wrapper.
+Extract single-cell representations from raw gene expression profiles; please refer to Get_STATE_Embedding.ipynb.
 
 ```python
-import torch
-from mvcbench.encoders import GeneEncoder
-
-# Initialize the encoder (e.g., STATE, scGPT, Geneformer)
-encoder = GeneEncoder(model_name="STATE")
-
-# Input: Gene expression tensor (batch_size, num_genes)
-# Note: MVCBench handles the gene vocabulary alignment automatically
-gene_expression = torch.randn(4, 19264) # Example normalized expression data
-
-# Extract cell-level embeddings
-cell_embeddings = encoder.encode(gene_expression)
-
-print(f"Embedding shape: {cell_embeddings.shape}")
-# Output: torch.Size([4, 512])
+inferer.encode_adata(
+    input_file, 
+    output_file, 
+    emb_key=embed_key, 
+    dataset_name=dataset_name,
+    gene_column=gene_column
+)
 
 ```
 
