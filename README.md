@@ -118,10 +118,10 @@ print(f"Embedding shape: {embeddings.shape}")
 
 ### Gene Embeddings (e.g., STATE)
 
-Extract single-cell representations from raw gene expression profiles; please refer to Get_STATE_Embedding.ipynb.
+Extract single-cell representations from raw gene expression profiles; please refer to [Get_STATE_Embedding.ipynb](https://github.com/QSong-github/MVCBench/blob/962286b36cf7784925aca52fb0e6da771d1206b2/examples/Get_STATE_Embedding.ipynb).
 
 ```python
-inferer.encode_adata(
+inferer.encode_adata( # https://github.com/ArcInstitute/state
     input_file, 
     output_file, 
     emb_key=embed_key, 
