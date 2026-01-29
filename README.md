@@ -90,29 +90,8 @@ MVCBench provides a unified and easy-to-use interface to extract embeddings usin
 
 ### Molecular Embeddings (e.g., UniMol2)
 
-You can easily extract molecular features from SMILES strings using our unified `MoleculeEncoder` wrapper.
+Extract single-cell representations from raw gene expression profiles; please refer to [Get_Molecular_Embedding.ipynb](https://github.com/QSong-github/MVCBench/blob/962286b36cf7784925aca52fb0e6da771d1206b2/examples/Get_Molecular_Embedding.ipynb).
 
-```python
-import torch
-from mvcbench.encoders import MoleculeEncoder
-
-# Initialize the encoder (e.g., UniMol V2, KPGT, Chemprop)
-encoder = MoleculeEncoder(model_name="UniMolV2")
-
-# Input: Single SMILES or a list of SMILES
-smiles_list = [
-    "CC(=O)OC1=CC=CC=C1C(=O)O",  # Aspirin
-    "CN1C=NC2=C1C(=O)N(C(=O)N2C)C" # Caffeine
-]
-
-# Extract embeddings
-# The encoder automatically handles tokenization and device placement
-embeddings = encoder.encode(smiles_list)
-
-print(f"Embedding shape: {embeddings.shape}")
-# Output: torch.Size([2, 1024]) (Dimension depends on the specific model)
-
-```
 
 ### Gene Embeddings (e.g., STATE)
 
