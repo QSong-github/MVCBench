@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="MVCBench: A Multimodal Benchmark for Drug-induced Virtual Cell Phenotypes">
+  <meta name="keywords" content="Virtual Cell, Drug Discovery, Multimodal Learning, Representation Benchmarking">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MVCBench Project Page</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+  <style>
+    body { font-family: 'Noto Sans', sans-serif; }
+    .title.is-1 { font-family: 'Google Sans', sans-serif; }
+    .publication-title { font-family: 'Google Sans', sans-serif; }
+    .hero-body { padding-bottom: 3rem; }
+    
+    /* 图片样式 */
+    .figure-caption { 
+        font-size: 0.95em; 
+        color: #4a4a4a; 
+        margin-top: 10px; 
+        margin-bottom: 20px; 
+        text-align: justify; 
+        background-color: #fcfcfc;
+        padding: 10px;
+        border-radius: 5px;
+        border-left: 4px solid #3273dc;
+    }
+    .main-figure { 
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.1); 
+        border-radius: 5px; 
+        margin-bottom: 10px; 
+        background: white;
+    }
+    
+    /* 结果文字框 */
+    .result-box { 
+        background-color: #f5f5f5; 
+        border-radius: 8px; 
+        padding: 15px; 
+        margin-bottom: 15px; 
+        border: 1px solid #e3e3e3;
+    }
+    .result-title {
+        font-weight: bold;
+        color: #363636;
+        margin-bottom: 8px;
+        font-family: 'Google Sans', sans-serif;
+    }
+
+    .stat-number { font-size: 1.8rem; font-weight: bold; color: #3273dc; }
+    .section-header { margin-bottom: 40px; }
+    .author-block { margin-right: 10px; display: inline-block; }
+  </style>
+</head>
+<body>
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop has-text-centered">
+        <h1 class="title is-1 publication-title">MVCBench: A Multimodal Benchmark for <br>Drug-induced Virtual Cell Phenotypes</h1>
+        
+        <div class="is-size-5 publication-authors">
+          <span class="author-block">Bo Li<sup>1,†</sup>,</span>
+          <span class="author-block">Qing Wang<sup>2,†</sup>,</span>
+          <span class="author-block">Shihang Wang<sup>3,†</sup>,</span>
+          <span class="author-block">Bob Zhang<sup>1,4,*</sup>,</span>
+          <span class="author-block">Minghao Zhou<sup>2</sup>,</span>
+          <span class="author-block">Yuzhong Peng<sup>5</sup>,</span>
+          <span class="author-block">Chengliang Liu<sup>1</sup>,</span><br>
+          <span class="author-block">Mengran Li<sup>6</sup>,</span>
+          <span class="author-block">Ziyang Tang<sup>7</sup>,</span>
+          <span class="author-block">Xiaojun Yao<sup>3</sup>,</span>
+          <span class="author-block">Chuxia Deng<sup>5</sup>,</span>
+          <span class="author-block">Qianqian Song<sup>2,8,*</sup></span>
+        </div>
+
+        <div class="is-size-6 publication-authors" style="margin-top: 15px;">
+          <span class="author-block"><sup>1</sup>University of Macau,</span>
+          <span class="author-block"><sup>2</sup>University of Florida,</span>
+          <span class="author-block"><sup>3</sup>Macao Polytechnic University,</span>
+          <span class="author-block"><sup>4</sup>Institute of Collaborative Innovation, UM,</span><br>
+          <span class="author-block"><sup>5</sup>FHS, University of Macau,</span>
+          <span class="author-block"><sup>6</sup>HKISI-CAS,</span>
+          <span class="author-block"><sup>7</sup>NVIDIA,</span>
+          <span class="author-block"><sup>8</sup>Wake Forest School of Medicine</span>
+        </div>
+
+        <div class="column has-text-centered">
+          <div class="publication-links">
+            <span class="link-block">
+              <a href="#" class="external-link button is-normal is-rounded is-dark">
+                <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                <span>Paper</span>
+              </a>
+            </span>
+            <span class="link-block">
+              <a href="https://github.com/QSong-github/MVCBench" class="external-link button is-normal is-rounded is-dark">
+                <span class="icon"><i class="fab fa-github"></i></span>
+                <span>Code</span>
+              </a>
+            </span>
+            <span class="link-block">
+              <a href="https://huggingface.co/datasets/Boom5426/MVCBench" class="external-link button is-normal is-rounded is-dark">
+                <span class="icon"><i class="far fa-images"></i></span>
+                <span>Data</span>
+              </a>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              Realizing a holistic virtual cell capable of accurately predicting how drug treatments reshape cellular phenotypes across transcriptional and morphological landscapes is a central goal in drug discovery. 
+              To bridge the gap in current representation capabilities, we introduce <strong>MVCBench</strong>, a systematic benchmarking framework evaluating <strong>24 representation models</strong> (12 molecular & 12 gene representations).
+            </p>
+            <p>
+              Leveraging nearly <strong>1.1 million</strong> paired profiles, we propose a progressive evaluation logic moving from independent component assessment to holistic multimodal modeling. 
+              Our analysis reveals a pronounced performance asymmetry: advanced molecular representations (e.g., UniMolV2) excel in morphology but show limited gains over simple fingerprints for gene expression. 
+              Furthermore, we demonstrate that <strong>multimodal joint optimization</strong> is essential for integrating orthogonal biological signals, establishing empirical design principles for next-generation Virtual Cell models.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-widescreen has-text-centered">
+      <h2 class="title is-3 section-header">The MVCBench Framework</h2>
+      <img src="./static/images/Fig1.png" class="main-figure" alt="MVCBench Framework" width="100%">
+      <p class="figure-caption">
+        <strong>Figure 1. Overview of MVCBench.</strong> (a-b) The benchmark covers 1.1 million paired profiles across 5 transcriptomic and 3 morphological datasets. (c) We evaluate 24 SOTA models (12 Drug Reps, 12 Gene Reps). (d) The framework employs a progressive benchmarking protocol: (A) Chemical Focus, (B) Biological Focus, and (C) Multimodal Virtual Cell.
+      </p>
+    </div>
+  </section>
+
+  <section class="section has-background-light">
+    <div class="container is-max-desktop">
+      <div class="level has-text-centered">
+        <div class="level-item">
+          <div>
+            <p class="heading">Paired Profiles</p>
+            <p class="stat-number">1.1 Million</p>
+          </div>
+        </div>
+        <div class="level-item">
+          <div>
+            <p class="heading">Transcriptomic Compounds</p>
+            <p class="stat-number">38,950</p>
+          </div>
+        </div>
+        <div class="level-item">
+          <div>
+            <p class="heading">Morphology Compounds</p>
+            <p class="stat-number">84,858</p>
+          </div>
+        </div>
+        <div class="level-item">
+          <div>
+            <p class="heading">Models</p>
+            <p class="stat-number">24</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-widescreen">
+      <h2 class="title is-3 has-text-centered section-header">Part 1: Benchmarking Drug Representations</h2>
+      <p class="subtitle has-text-centered is-6">
+        <em>Insight: A pronounced performance asymmetry exists between gene expression and morphology prediction.</em>
+      </p>
+      
+      <div class="columns is-variable is-6">
+        <div class="column is-6">
+          <div class="result-box">
+            <div class="result-title"><i class="fas fa-dna"></i> Gene Expression Prediction</div>
+            <p class="is-size-7">
+              For gene expression tasks, advanced molecular representations (e.g., UniMolV2, KPGT) show only <strong>marginal gains</strong> over simple ECFP4 fingerprints. The performance gap is minimal (< 1%), suggesting saturation in predicting transcriptomic responses solely from chemical structure.
+            </p>
+          </div>
+          <img src="./static/images/Fig2.png" class="main-figure" alt="Fig 2 Drug Gene">
+          <p class="figure-caption">
+            <strong>Figure 2.</strong> Drug representations for gene expression prediction (LINCS2020 & Tahoe). Note the similar performance across methods.
+          </p>
+        </div>
+
+        <div class="column is-6">
+          <div class="result-box">
+            <div class="result-title"><i class="fas fa-microscope"></i> Morphology Prediction</div>
+            <p class="is-size-7">
+              In contrast, for morphology (Cell Painting), deep learning-based methods (UniMolV2, Chemprop) <strong>significantly outperform</strong> the ECFP4 baseline. 3D geometric information proves crucial for predicting structural phenotypic changes.
+            </p>
+          </div>
+          <img src="./static/images/Fig3.png" class="main-figure" alt="Fig 3 Drug Morphology">
+          <p class="figure-caption">
+            <strong>Figure 3.</strong> Drug representations for cell morphology prediction. UniMolV2 and KPGT consistently lead across datasets (cpg0016, BBBC).
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section has-background-light">
+    <div class="container is-max-widescreen">
+      <h2 class="title is-3 has-text-centered section-header">Part 2: Benchmarking Gene Representations</h2>
+      
+      <div class="columns is-centered">
+        <div class="column is-10">
+          <div class="result-box has-text-centered">
+            <p>
+              <strong>Perturbation-Specific Models Win:</strong> The model <strong>STATE</strong> maintains a consistent lead, with scGPT and scFoundation forming a competitive top tier. This underscores the value of alignment between pretraining objectives (perturbation prediction) and downstream tasks.
+            </p>
+          </div>
+          <img src="./static/images/Fig4.png" class="main-figure" alt="Fig 4 Gene Reps">
+          <p class="figure-caption">
+            <strong>Figure 4.</strong> Comparative benchmarking of 12 gene representation methods. (a) Performance on LINCS2020. (b) Evaluation on high signal-to-noise Highly Expressed Genes (HEG). (c-d) Generalization on Tahoe_mini dataset.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-widescreen">
+      <h2 class="title is-3 has-text-centered section-header">Part 3: Multimodal Virtual Cell Construction</h2>
+
+      <div class="columns is-vcentered">
+        <div class="column is-5">
+          <h4 class="title is-4">Joint Optimization Gains</h4>
+          <div class="content">
+            <p>
+              We systematically compared single-modality training vs. multimodal joint optimization (MVC). 
+              <strong>Result:</strong> MVC consistently yields the highest performance, outperforming single-modality baselines by 2-6%.
+            </p>
+            <p>
+              <strong>UniMolV2</strong> emerged as the most robust chemical backbone for multimodal tasks (CPS=1.0), followed by KPGT.
+            </p>
+          </div>
+        </div>
+        <div class="column is-7">
+          <img src="./static/images/Fig5.png" class="main-figure" alt="Fig 5 Multimodal Construction">
+          <p class="figure-caption">
+            <strong>Figure 5.</strong> Benchmarking multimodal virtual cell construction. (c) Composite Performance Score ranking UniMolV2 as top. (d-e) Multimodal joint optimization (MVC) outperforms single-task (CP) and cross-modal auxiliary (MVC_CP) settings.
+          </p>
+        </div>
+      </div>
+
+      <hr style="margin: 3rem 0;">
+
+      <div class="columns is-vcentered">
+        <div class="column is-7">
+          <img src="./static/images/Fig6.png" class="main-figure" alt="Fig 6 Design Principles">
+          <p class="figure-caption">
+            <strong>Figure 6. Design Principles.</strong> (a-b) Modality orthogonality: Gene and Morphology provide non-redundant info. (c) Loss Balancing: Fixed-ratio weighting outperforms adaptive schemes (MTA/UBA). (d) Fusion: Intermediate fusion is optimal for morphology; Late fusion for gene expression.
+          </p>
+        </div>
+        <div class="column is-5">
+          <h4 class="title is-4">Empirical Design Principles</h4>
+          <div class="content">
+            <ul>
+              <li><strong>Modality Orthogonality:</strong> Transcriptomic and morphological predictive tasks are uncorrelated (PCC ≈ 0), confirming the necessity of joint modeling.</li>
+              <li><strong>Loss Balancing:</strong> Simple <strong>Fixed-ratio weighting</strong> (explicit scale calibration) significantly outperforms complex adaptive schemes like Uncertainty weighting, preventing noise dominance.</li>
+              <li><strong>Fusion Strategy:</strong>
+                <ul>
+                  <li><em>Intermediate Fusion</em>: Best for structural tasks (Morphology).</li>
+                  <li><em>Late Fusion</em>: Best for high-dimensional regulatory tasks (Gene Expression).</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">Citation</h2>
+      <pre><code>@article{li2026mvcbench,
+  title={MVCBench: A Multimodal Benchmark for Drug-induced Virtual Cell Phenotypes},
+  author={Li, Bo and Wang, Qing and Wang, Shihang and Zhang, Bob and Zhou, Minghao and Peng, Yuzhong and Liu, Chengliang and Li, Mengran and Tang, Ziyang and Yao, Xiaojun and Deng, Chuxia and Song, Qianqian},
+  journal={bioRxiv},
+  year={2026}
+}</code></pre>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <p>
+          This website is adapted from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>, licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
