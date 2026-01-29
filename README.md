@@ -90,12 +90,12 @@ MVCBench provides a unified and easy-to-use interface to extract embeddings usin
 
 ### Molecular Embeddings (e.g., UniMol2)
 
-Extract single-cell representations from raw gene expression profiles; please refer to [Get_Molecular_Embedding.ipynb](https://github.com/QSong-github/MVCBench/blob/962286b36cf7784925aca52fb0e6da771d1206b2/examples/Get_Molecular_Embedding.ipynb).
+Extract single-cell representations from raw gene expression profiles; please refer to [Get_Molecular_Embedding.ipynb](https://github.com/QSong-github/MVCBench/blob/main/examples/Get_Molecular_Embedding.ipynb).
 
 
 ### Gene Embeddings (e.g., STATE)
 
-Extract single-cell representations from raw gene expression profiles; please refer to [Get_STATE_Embedding.ipynb](https://github.com/QSong-github/MVCBench/blob/962286b36cf7784925aca52fb0e6da771d1206b2/examples/Get_STATE_Embedding.ipynb).
+Extract single-cell representations from raw gene expression profiles; please refer to [Get_STATE_Embedding.ipynb](https://github.com/QSong-github/MVCBench/blob/main/examples/Get_STATE_Embedding.ipynb).
 
 ```python
 inferer.encode_adata( # https://github.com/ArcInstitute/state
