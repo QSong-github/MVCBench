@@ -12,19 +12,6 @@
 
 ---
 
-## 🚀 Key Features
-
-* **📊 Massive Scale:** Evaluation on **1.1M+** paired pre- and post-treatment profiles (480k+ transcriptomic, 600k+ morphological).
-* **🧠 Comprehensive Model Zoo:** Benchmarking of **24 SOTA models**, including **UniMolV2**, **KPGT**, **scGPT**, **STATE**, and **scFoundation**.
-* **⚙️ Progressive Evaluation:** A decoupled framework separating **Drug Representation Focus** from **Gene Representation Focus**.
-* **📈 Generalization Ladder:** Rigorous testing across three levels of difficulty:
-    * *Structure Generalization* (Leave-SMILES-out)
-    * *Context Generalization* (Leave-Plate/Cell-line-out)
-    * *System Generalization* (Cross-Dataset Transfer, e.g., LINCS ↔ Tahoe)
-* **🤝 Multimodal Fusion:** Proven design principles for constructing Multimodal Virtual Cells (MVC) using joint optimization.
-
----
-
 ## 🧬 Benchmark Zoo
 
 We evaluate widely used Drug Molecular Representation methods and Gene Representation methods (Single-cell Foundation Models).
