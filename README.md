@@ -4,26 +4,24 @@
 [![License](https://img.shields.io/badge/License-MIT-green)](./LICENSE)
 [![Preprint](https://img.shields.io/badge/Preprint-bioRxiv-red)](https://www.biorxiv.org/) 
 
-**MVCBench** is a unified multimodal framework designed to rigorously assess representation learning for virtual cell phenotyping. It serves as a methodological foundation for developing the next generation of robust and generalizable virtual cell models.
+> **Towards a Holistic Virtual Cell:** Decoupling chemical and biological representations to predict how drugs reshape cellular phenotypes.
+
+**MVCBench** is the first systematic benchmarking framework designed to evaluate **24 representation models** (12 Molecular + 12 Gene Representation Methods) on their ability to predict drug-induced transcriptomic and morphological responses. Leveraging nearly **1.1 million profiles** across 6 datasets, MVCBench introduces a progressive evaluation logic moving from independent component assessment to holistic multimodal modeling.
 
 [**📖 Read the Paper**](link_to_your_paper) | [**🤗 HuggingFace Datasets**](https://huggingface.co/datasets/Boom5426/MVCBench) | [**🚀 Getting Started**](#getting-started)
 
 ---
 
-## 🌟 Overview
+## 🚀 Key Features
 
-Realizing a holistic **Virtual Cell** capable of accurately predicting how **chemical perturbations** reshape cellular phenotypes across transcriptional and morphological landscapes is a central goal in drug discovery. **MVCBench** overcomes the limitations of fragmented, modality-specific benchmarks by establishing a standardized methodology involving:
-
-- **1 Million+** paired observations.
-- **22 Representation Models** benchmarked (11 Molecular + 11 Single-cell FMs).
-- **6 Generalization Tasks** ranging from in-domain to cross-dataset transfer.
-- **Multimodal Fusion** protocols and rigoros evaluation metrics (including the **Composite Performance Score**).
-
-### 🗝️ Key Insights
-1.  **Performance Asymmetry:** Advanced molecular representations (e.g., UniMolV2, KPGT) excel in morphology but show marginal gains in gene expression tasks compared to simple fingerprints.
-2.  **The Foundation Model Paradox:** While perturbation-specific models like **STATE** lead the field, many high-capacity scFMs are more susceptible to technical shifts (batch effects) than simple baselines.
-3.  **Generalization Bottleneck:** Out-of-distribution generalization remains the primary challenge, with performance deteriorating sharply in cross-dataset scenarios.
-4.  **Multimodal Synergy:** Gene expression and morphology provide orthogonal, synergistic contexts. **Late-stage fusion** and **fixed-ratio loss weighting** consistently outperform complex adaptive schemes.
+* **📊 Massive Scale:** Evaluation on **1.1M+** paired pre- and post-treatment profiles (480k+ transcriptomic, 600k+ morphological).
+* **🧠 Comprehensive Model Zoo:** Benchmarking of **24 SOTA models**, including **UniMolV2**, **KPGT**, **scGPT**, **STATE**, and **scFoundation**.
+* **⚙️ Progressive Evaluation:** A decoupled framework separating **Drug Representation Focus** from **Gene Representation Focus**.
+* **📈 Generalization Ladder:** Rigorous testing across three levels of difficulty:
+    * *Structure Generalization* (Leave-SMILES-out)
+    * *Context Generalization* (Leave-Plate/Cell-line-out)
+    * *System Generalization* (Cross-Dataset Transfer, e.g., LINCS ↔ Tahoe)
+* **🤝 Multimodal Fusion:** Proven design principles for constructing Multimodal Virtual Cells (MVC) using joint optimization.
 
 ---
 
