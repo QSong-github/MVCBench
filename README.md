@@ -1,6 +1,6 @@
 # MVCBench: A Multimodal Benchmark for Drug-induced Virtual Cell Phenotypes
 
-[![Python](https://img.shields.io/badge/Python-3.8%2B-blue)](https://www.python.org/)
+[![Python](https://img.shields.io/badge/Python-3.11%2B-blue)](https://www.python.org/)
 [![License](https://img.shields.io/badge/License-MIT-green)](./LICENSE)
 [![Preprint](https://img.shields.io/badge/Preprint-bioRxiv-red)](https://www.biorxiv.org/) 
 
@@ -107,7 +107,7 @@ git clone https://github.com/QSong-github/MVCBench.git
 cd MVCBench
 
 # Create a virtual environment
-conda create -n mvcbench python=3.9
+conda create -n mvcbench python=3.11
 conda activate mvcbench
 
 # Install dependencies
