@@ -30,7 +30,7 @@ def parse_args():
     # --- 训练配置 ---
     parser.add_argument("--seed", type=int, default=3407)
     parser.add_argument("--batch_size", type=int, default=1024)
-    parser.add_argument("--n_epochs", type=int, default=500)
+    parser.add_argument("--n_epochs", type=int, default=10)
     parser.add_argument("--lr", type=float, default=1e-3)
     parser.add_argument("--dropout", type=float, default=0.2)
     parser.add_argument("--weight_decay", type=float, default=1e-5)
@@ -71,7 +71,7 @@ def main():
     # ==========================================
     # 1. 路径构建
     # ==========================================
-    experiment_name = f"{args.dataset_name}_{args.split_data_type}/{args.molecule_feature}_MVC"
+    experiment_name = f"{args.dataset_name}_{args.split_data_type}/{args.molecule_feature}_Default"
     save_dir = os.path.join(args.save_dir_root, experiment_name)
     os.makedirs(save_dir, exist_ok=True)
     
@@ -134,7 +134,7 @@ def main():
     # 5. 预测与评估
     # ==========================================
     print(f"Loading best model for evaluation...")
-    model = torch.load(best_model_path, map_location=device)
+    model = torch.load(best_model_path, map_location=device, weights_only=False)
     model.to(device)
     model.eval()
     

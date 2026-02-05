@@ -109,7 +109,7 @@ def main():
 
     # 5. 测试
     print("Evaluating...")
-    model = torch.load(best_model_path, map_location=device)
+    model = torch.load(best_model_path, map_location=device, weights_only=False)
     model.eval()
     
     # 收集预测

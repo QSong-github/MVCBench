@@ -18,8 +18,8 @@ def parse_args():
     parser = argparse.ArgumentParser(description="Gene Expression Prediction Training")
     
     # --- 数据集配置 ---
-    parser.add_argument("--dataset_name", type=str, default="Tahoe_P1", help="LINCS, CIGS, BBBC047, BBBC036, LINCS965, Tahoe_P1, etc.")
-    parser.add_argument("--molecule_feature", type=str, default="ECFP4", help="ECFP4, KPGT, MolT5, etc.")
+    parser.add_argument("--dataset_name", type=str, default="BBBC047", help="LINCS, CIGS, BBBC047, BBBC036, LINCS965, Tahoe_P1, etc.")
+    parser.add_argument("--molecule_feature", type=str, default="KPGT", help="ECFP4, KPGT, MolT5, etc.")
     parser.add_argument("--split_data_type", type=str, default="smiles_split", help="random_split, smiles_split, cells_split")
     parser.add_argument("--train_cell_count", type=str, default="None", help="Used only for cells_split")
     
@@ -153,7 +153,7 @@ def main():
     # 5. 预测与评估 (Predict Profile)
     # ==========================================
     print(f"Loading best model from {best_model_path} for evaluation...")
-    model = torch.load(best_model_path, map_location=device)
+    model = torch.load(best_model_path, map_location=device, weights_only=False)
     model.to(device)
     model.eval()
     
