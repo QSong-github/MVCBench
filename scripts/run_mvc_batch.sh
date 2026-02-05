@@ -8,7 +8,7 @@
 
 # 1. 基础配置
 GPU_ID=0
-EPOCHS=300            # MVC 模型参数较多，通常需要较多轮次收敛
+EPOCHS=2            # MVC 模型参数较多，通常需要较多轮次收敛
 BATCH_SIZE=1024
 LR=1e-3
 PROJECT_ROOT=".."
@@ -20,9 +20,10 @@ MVC_DATASETS=("MVC_BBBC047" "MVC_BBBC036")
 
 # 3. 定义分子表征 (12种)
 MOLECULE_FEATURES=(
-    "ECFP4" "KPGT" "InfoAlign" "ChemBERTa2" "MolT5" 
-    "Chemprop" "MolCLR" "Mole_BERT" "GeminiMol" 
-    "Ouroboros" "UniMol" "UniMolV2"
+    "ECFP4"
+    #  "KPGT" "InfoAlign" "ChemBERTa2" "MolT5" 
+    # "Chemprop" "MolCLR" "Mole_BERT" "GeminiMol" 
+    # "Ouroboros" "UniMol" "UniMolV2"
 )
 
 echo "============================================"

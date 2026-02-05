@@ -24,16 +24,18 @@ ALL_DATASETS=("${BASIC_DATASETS[@]}" "${TAHOE_PLATES[@]}")
 # 3. 定义模型列表 (根据论文 Fig. 1c & Table 2)
 # 分子表征 (12种)
 MOLECULE_FEATURES=(
-    "ECFP4" "KPGT" "InfoAlign" "ChemBERTa2" "MolT5" 
-    "Chemprop" "MolCLR" "Mole_BERT" "GeminiMol" 
-    "Ouroboros" "UniMol" "UniMolV2"
+    "ECFP4"
+    #  "KPGT" "InfoAlign" "ChemBERTa2" "MolT5" 
+    # "Chemprop" "MolCLR" "Mole_BERT" "GeminiMol" 
+    # "Ouroboros" "UniMol" "UniMolV2"
 )
 
 # 基因表征 (12种，包含 Default)
 GENE_ENCODERS=(
-    "Default" "Geneformer" "scBERT" "Openbiomed" "SCimilarity" # Encoder-only
-    "scFoundation" "scGPT" "UCE" "CellPLM" "STATE"             # Encoder-Decoder
-    "tGPT" "Cell2Sentence"                                     # Decoder-only
+    "Default"
+    #  "Geneformer" "scBERT" "Openbiomed" "SCimilarity" # Encoder-only
+    # "scFoundation" "scGPT" "UCE" "CellPLM" "STATE"             # Encoder-Decoder
+    # "tGPT" "Cell2Sentence"                                     # Decoder-only
 )
 
 echo "============================================"

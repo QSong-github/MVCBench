@@ -20,9 +20,10 @@ IMAGE_DATASETS=("BBBC047" "BBBC036" "cpg0016")
 
 # 3. 定义分子表征 (12种)
 MOLECULE_FEATURES=(
-    "ECFP4" "KPGT" "InfoAlign" "ChemBERTa2" "MolT5" 
-    "Chemprop" "MolCLR" "Mole_BERT" "GeminiMol" 
-    "Ouroboros" "UniMol" "UniMolV2"
+    "ECFP4"
+    #  "KPGT" "InfoAlign" "ChemBERTa2" "MolT5" 
+    # "Chemprop" "MolCLR" "Mole_BERT" "GeminiMol" 
+    # "Ouroboros" "UniMol" "UniMolV2"
 )
 
 # 4. 图像编码器 (默认使用 CellProfiler Features)
