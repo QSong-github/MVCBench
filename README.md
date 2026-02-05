@@ -96,8 +96,7 @@ inferer.encode_adata( # https://github.com/ArcInstitute/state
 ```
 
 
-
-## 🚀 Getting Started
+## <a id="jump-target"></a>🚀 Getting Started
 
 ### Installation
 
