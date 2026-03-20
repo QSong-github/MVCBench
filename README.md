@@ -81,7 +81,7 @@ MVCBench leverages over one million paired observations across transcriptomic an
 - **[cpg0016 & cpg0003]** (Cell Painting Gallery) - [AWS Registry](https://registry.opendata.aws/cellpainting-gallery/)
 
 ### Multimodal (Paired)
-- **CDRP-BBBC047-Bray** & **CDRPBIO-BBBC036-Bray** - Available via the [MVCBench HuggingFace](link_to_your_hf).
+- **CDRP-BBBC047-Bray** & **CDRPBIO-BBBC036-Bray** - Available via the [Project](https://www.nature.com/articles/s41592-022-01667-0).
 
 The preprocessed dataset used in this paper is available at [MVCBench HuggingFace](https://huggingface.co/datasets/Boom5426/MVCBench).
 
