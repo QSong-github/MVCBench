@@ -6,7 +6,7 @@
 
 > **Towards a Holistic Virtual Cell:** Decoupling chemical and biological representations to predict how drugs reshape cellular phenotypes.
 
-**MVCBench** is the first systematic benchmarking framework designed to evaluate **24 representation models** (12 Molecular + 12 Gene Representation Methods) on their ability to predict drug-induced transcriptomic and morphological responses. Leveraging nearly **1.1 million profiles** across 6 datasets, MVCBench introduces a progressive evaluation logic moving from independent component assessment to holistic multimodal modeling.
+**MVCBench** is the first systematic benchmarking framework designed to evaluate **24 representation models** (12 molecular + 12 gene representation methods) on their ability to predict drug-induced transcriptomic and morphological responses. Leveraging nearly **1.1 million profiles** across 6 datasets, MVCBench introduces a progressive evaluation logic moving from independent component assessment to holistic multimodal modeling.
 
 [**📖 Read the Paper**](link_to_your_paper) | [**🤗 HuggingFace Datasets**](https://huggingface.co/datasets/Boom5426/MVCBench) | [**🚀 Getting Started**](#jump-target)
 
@@ -143,11 +143,11 @@ python main.py --task multimodal_fusion \
 If you find MVCBench useful for your research, please cite our paper:
 
 ```bibtex
-@article{li2025mvcbench,
+@article{li2026mvcbench,
   title={MVCBench: A Multimodal Benchmark for Drug-induced Virtual Cell Phenotypes},
-  author={Li, Bo and Wang, Qing and Wang, Shihang and Zhang, Bob and Zhou, Minghao and Peng, Yuzhong and Liu, Chengliang and Li, Mengran and Tang, Ziyang and Yao, Xiaojun and Deng, Chuxia and Song, Qianqian},
+  author={Li, Bo and Wang, Qing and Wang, Shihang and Zhang, Bob and Peng, Yuzhong and Zeng, Pingxian and Liu, Chengliang and Li, Mengran and Tang, Ziyang and Yao, Xiaojun and Deng, Chuxia and Song, Qianqian},
   journal={bioRxiv},
-  year={2025},
+  year={2026},
   publisher={Cold Spring Harbor Laboratory}
 }
 
