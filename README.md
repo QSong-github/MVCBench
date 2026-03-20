@@ -132,27 +132,85 @@ pip install -r requirements.txt
 
 ```
 
-### Usage
+### Data organization
 
-Run a basic benchmark task (e.g., drug-induced gene expression prediction):
-
-```bash
-python main.py --task gene_prediction \
-               --molecule_encoder UniMolV2 \
-               --gene_encoder STATE \
-               --dataset LINCS2020 \
-               --split leave_smiles_out
-
-```
-
-For multimodal fusion experiments:
+MVCBench expects benchmark datasets and precomputed molecular representations to be available under a data root directory. By default, the code looks for data under `./data`. You can also set a custom location by defining the environment variable `VCBENCH_DATA_ROOT`.
 
 ```bash
-python main.py --task multimodal_fusion \
-               --fusion_strategy late_fusion \
-               --loss_weight fixed_ratio
-
+export VCBENCH_DATA_ROOT=/path/to/MVCBench_data
 ```
+
+The current codebase uses dataset paths defined in `src/configs.py`. In practice, the following resource groups are expected:
+
+- transcriptomic datasets such as `LINCS2020`, `CIGS`, and `Tahoe-100M`
+- morphology datasets such as `BBBC036`, `BBBC047`, and `cpg0016`
+- paired multimodal datasets for MVC experiments
+- precomputed molecular embeddings stored under `Molecular_representations/...`
+
+The preprocessed benchmark release is available at [MVCBench on Hugging Face](https://huggingface.co/datasets/Boom5426/MVCBench).
+
+
+
+### Main training scripts
+
+The repository currently provides three main training entry points:
+
+- `train_gene.py` for drug-to-gene-expression prediction
+- `train_image.py` for drug-to-morphology prediction
+- `train_mvc.py` for multimodal virtual cell modeling
+
+Batch scripts for running benchmark sweeps are also provided in [scripts/run_gene_batch.sh](/data/boom/Agent/MVCBench/scripts/run_gene_batch.sh), [scripts/run_image_batch.sh](/data/boom/Agent/MVCBench/scripts/run_image_batch.sh), and [scripts/run_mvc_batch.sh](/data/boom/Agent/MVCBench/scripts/run_mvc_batch.sh).
+
+### Example commands
+
+Run a gene expression benchmark:
+
+```bash
+python3 train_gene.py \
+  --dataset_name LINCS \
+  --molecule_feature ECFP4 \
+  --gene_encoder_type Default \
+  --split_data_type smiles_split \
+  --n_epochs 2 \
+  --batch_size 1024
+```
+
+Run a morphology benchmark:
+
+```bash
+python3 train_image.py \
+  --dataset_name cpg0016 \
+  --molecule_feature ECFP4 \
+  --image_encoder_type Default \
+  --split_data_type smiles_split \
+  --n_epochs 2 \
+  --batch_size 1024
+```
+
+Run a multimodal virtual cell benchmark:
+
+```bash
+python3 train_mvc.py \
+  --dataset_name MVC_BBBC047 \
+  --molecule_feature ECFP4 \
+  --split_data_type smiles_split \
+  --n_epochs 2 \
+  --batch_size 1024
+```
+
+### Outputs
+
+Training outputs are written under the `results/` directory by default. Depending on the task, the code will save:
+
+- model checkpoints such as `best_model.pt`
+- per-sample evaluation tables in CSV format
+- predicted profiles in HDF5 format when prediction export is enabled
+
+### Notes
+
+- Example notebooks for representation extraction are available in [examples/Get_Molecular_Embedding.ipynb](https://github.com/QSong-github/MVCBench/blob/main/examples/Get_Molecular_Embedding.ipynb) and [examples/Get_STATE_Embedding.ipynb](https://github.com/QSong-github/MVCBench/blob/main/examples/Get_STATE_Embedding.ipynb).
+- Dataset names, file mappings, and embedding filenames are configured in [src/configs.py](/data/boom/Agent/MVCBench/src/configs.py).
+
 
 ---
 
