@@ -176,5 +176,5 @@ If you find MVCBench useful for your research, please cite our paper:
 For any questions or inquiries, please open an issue or contact:
 
 * **Bo Li**: Boom985426@gmail.com
-* **Qianqian Song**: qsong1@ufl.edu
 * **Bob Zhang**: bobzhang@um.edu.mo
+* **Qianqian Song**: qsong1@ufl.edu
