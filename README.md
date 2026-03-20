@@ -145,7 +145,7 @@ If you find MVCBench useful for your research, please cite our paper:
 ```bibtex
 @article{li2026mvcbench,
   title={MVCBench: A Multimodal Benchmark for Drug-induced Virtual Cell Phenotypes},
-  author={Li, Bo and Wang, Qing and Wang, Shihang and Zhang, Bob and Peng, Yuzhong and Zeng, Pingxian and Liu, Chengliang and Li, Mengran and Tang, Ziyang and Yao, Xiaojun and Deng, Chuxia and Song, Qianqian},
+  author={Li, Bo and Wang, Qing and Wang, Shihang and Zhang, Bob and Peng, Yuzhong and Zeng, Pinxian and Liu, Chengliang and Li, Mengran and Tang, Ziyang and Yao, Xiaojun and Deng, Chuxia and Song, Qianqian},
   journal={bioRxiv},
   year={2026},
   publisher={Cold Spring Harbor Laboratory}
