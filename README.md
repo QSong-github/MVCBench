@@ -2,15 +2,33 @@
 
 [![Python](https://img.shields.io/badge/Python-3.11%2B-blue)](https://www.python.org/)
 [![License](https://img.shields.io/badge/License-MIT-green)](./LICENSE)
-[![Preprint](https://img.shields.io/badge/Preprint-bioRxiv-red)](https://www.biorxiv.org/) 
+[![Project Page](https://img.shields.io/badge/Project-Page-black)](https://qsong-github.github.io/MVCBench/)
+[![Dataset](https://img.shields.io/badge/HuggingFace-Dataset-yellow)](https://huggingface.co/datasets/Boom5426/MVCBench)
 
-> **Towards a Holistic Virtual Cell:** Decoupling chemical and biological representations to predict how drugs reshape cellular phenotypes.
+> A systematic benchmark for evaluating molecular and gene representations in predicting drug-induced multimodal virtual cell phenotypes.
 
-**MVCBench** is the first systematic benchmarking framework designed to evaluate **24 representation models** (12 molecular + 12 gene representation methods) on their ability to predict drug-induced transcriptomic and morphological responses. Leveraging nearly **1.1 million profiles** across 6 datasets, MVCBench introduces a progressive evaluation logic moving from independent component assessment to holistic multimodal modeling.
-
-[**📖 Read the Paper**](link_to_your_paper) | [**🤗 HuggingFace Datasets**](https://huggingface.co/datasets/Boom5426/MVCBench) | [**🚀 Getting Started**](#jump-target)
+[**Project Page**](https://qsong-github.github.io/MVCBench/) | [**Dataset**](https://huggingface.co/datasets/Boom5426/MVCBench) | [**Manuscript**](mailto:qsong1@ufl.edu?subject=MVCBench%20manuscript%20request) `available upon request` | `Preprint coming soon`
 
 ---
+
+## Overview
+
+**MVCBench** is a benchmarking framework for studying how representation choices shape the prediction of drug-induced cellular phenotypes across transcriptional and morphological modalities. It systematically evaluates **24 representation methods** spanning **12 drug molecular representations** and **12 gene representation methods** using nearly **1.1 million drug-induced profiles** collected from large-scale transcriptomic and high-content imaging resources.
+
+
+![MVCBench Overview](docs/static/images/Fig1.png)
+
+**Figure 1.** Overview of MVCBench. The benchmark spans transcriptomic, morphological, and multimodal prediction settings, covering large-scale paired profiles, diverse representation models, and progressive evaluation stages from single-modality prediction to multimodal virtual cell construction.
+
+
+## Key Findings
+
+Advanced molecular representations are highly beneficial for predicting drug-induced morphological phenotypes, where 3D-aware and deep learning-based encoders consistently outperform classical molecular fingerprints. By contrast, their gains for transcriptomic response prediction are much smaller, suggesting that chemical structure alone may be insufficient to fully explain gene expression responses.
+
+For transcriptomic prediction, task-specific gene representations show clearer advantages than general-purpose foundation models. This indicates that alignment between representation learning objectives and perturbation-response tasks remains critical, even as single-cell foundation models continue to improve.
+
+Multimodal integration consistently improves predictive performance over single-modality training. Beyond benchmark scores, MVCBench provides practical guidance for designing multimodal virtual cell systems, including the value of modality-aware optimization and task-dependent fusion strategies.
+
 
 ## 🧬 Benchmark Zoo
 
