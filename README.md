@@ -7,7 +7,7 @@
 
 > A systematic benchmark for evaluating molecular and gene representations in predicting drug-induced multimodal virtual cell phenotypes.
 
-[**Project Page**](https://qsong-github.github.io/MVCBench/) | [**Dataset**](https://huggingface.co/datasets/Boom5426/MVCBench) | [**Manuscript**](mailto:qsong1@ufl.edu?subject=MVCBench%20manuscript%20request) `available upon request` | `Preprint coming soon`
+[**Project Page**](https://qsong-github.github.io/MVCBench/) | [**Manuscript**](https://www.biorxiv.org/content/10.64898/2026.04.22.720110v1) | [**Dataset**](https://huggingface.co/datasets/Boom5426/MVCBench)
 
 ---
 
@@ -220,11 +220,13 @@ If you find MVCBench useful for your research, please cite our paper:
 
 ```bibtex
 @article{li2026mvcbench,
-  title={MVCBench: A Multimodal Benchmark for Drug-induced Virtual Cell Phenotypes},
-  author={Li, Bo and Wang, Qing and Wang, Shihang and Zhang, Bob and Peng, Yuzhong and Zeng, Pinxian and Liu, Chengliang and Li, Mengran and Tang, Ziyang and Yao, Xiaojun and Deng, Chuxia and Song, Qianqian},
-  journal={bioRxiv},
-  year={2026},
-  publisher={Cold Spring Harbor Laboratory}
+  title   = {{MVCBench}: A Multimodal Benchmark for Drug-induced Virtual Cell Phenotypes},
+  author  = {Li, Bo and Wang, Qing and Wang, Shihang and Zhang, Bob and Peng, Yuzhong and Zeng, Pinxian and Liu, Chengliang and Li, Mengran and Tang, Ziyang and Yao, Xiaojun and Deng, Chuxia and Song, Qianqian},
+  journal = {bioRxiv},
+  year    = {2026},
+  doi     = {10.64898/2026.04.22.720110},
+  url     = {https://www.biorxiv.org/content/10.64898/2026.04.22.720110v1},
+  note    = {Preprint, version 1}
 }
 
 ```
