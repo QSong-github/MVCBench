@@ -1,172 +1,148 @@
-# MVCBench: A Multimodal Benchmark for Drug-induced Virtual Cell Phenotypes
+<div align="center">
 
-[![Python](https://img.shields.io/badge/Python-3.11%2B-blue)](https://www.python.org/)
-[![License](https://img.shields.io/badge/License-MIT-green)](./LICENSE)
-[![Project Page](https://img.shields.io/badge/Project-Page-black)](https://qsong-github.github.io/MVCBench/)
-[![Dataset](https://img.shields.io/badge/HuggingFace-Dataset-yellow)](https://huggingface.co/datasets/Boom5426/MVCBench)
+<h1>🧬 MVCBench</h1>
 
-> A systematic benchmark for evaluating molecular and gene representations in predicting drug-induced multimodal virtual cell phenotypes.
+<h3>A Multimodal Benchmark for Drug-induced Virtual Cell Phenotypes</h3>
 
-[**Project Page**](https://qsong-github.github.io/MVCBench/) | [**Manuscript**](https://www.biorxiv.org/content/10.64898/2026.04.22.720110v1) | [**Dataset**](https://huggingface.co/datasets/Boom5426/MVCBench)
+<p>
+  <strong>Which molecular and gene representations work, for which cellular readouts, and under which evaluation settings?</strong>
+</p>
 
----
+<p>
+  🧪 <strong>Molecular representations</strong> &nbsp;·&nbsp;
+  🧬 <strong>Gene representations</strong> &nbsp;·&nbsp;
+  🔬 <strong>Transcriptomics</strong> &nbsp;·&nbsp;
+  🖼️ <strong>Cell morphology</strong>
+</p>
 
-## Overview
+<p>
+  <a href="https://qsong-github.github.io/MVCBench/"><img src="https://img.shields.io/badge/Project-Website-256A73?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Project website"></a>
+  <a href="https://www.biorxiv.org/content/10.64898/2026.04.22.720110v1"><img src="https://img.shields.io/badge/bioRxiv-Preprint-B31B1B?style=for-the-badge&logo=readthedocs&logoColor=white" alt="bioRxiv preprint"></a>
+  <a href="https://huggingface.co/datasets/Boom5426/MVCBench"><img src="https://img.shields.io/badge/%F0%9F%A4%97-Hugging_Face_Data-FFD21E?style=for-the-badge&labelColor=2F3136" alt="Hugging Face dataset"></a>
+</p>
 
-**MVCBench** is a benchmarking framework for studying how representation choices shape the prediction of drug-induced cellular phenotypes across transcriptional and morphological modalities. It systematically evaluates **24 representation methods** spanning **12 drug molecular representations** and **12 gene representation methods** using nearly **1.1 million drug-induced profiles** collected from large-scale transcriptomic and high-content imaging resources.
+<p>
+  <img src="https://img.shields.io/badge/Nature_Communications-Accepted_in_Principle-2B807C?style=flat-square" alt="Nature Communications accepted in principle">
+  <a href="https://www.python.org/"><img src="https://img.shields.io/badge/Python-3.11%2B-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python 3.11+"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-6B7280?style=flat-square&logo=opensourceinitiative&logoColor=white" alt="MIT license"></a>
+  <a href="https://github.com/QSong-github/MVCBench/stargazers"><img src="https://img.shields.io/github/stars/QSong-github/MVCBench?style=flat-square&logo=github" alt="GitHub stars"></a>
+</p>
 
+<p>
+  <a href="https://qsong-github.github.io/MVCBench/">🌐 <b>Project Page</b></a>
+  &nbsp;•&nbsp; <a href="https://www.biorxiv.org/content/10.64898/2026.04.22.720110v1">📄 <b>Read the Paper</b></a>
+  &nbsp;•&nbsp; <a href="https://huggingface.co/datasets/Boom5426/MVCBench">🗂️ <b>Dataset</b></a>
+  &nbsp;•&nbsp; <a href="#quickstart">⚡ <b>Quickstart</b></a>
+  &nbsp;•&nbsp; <a href="#citation">📝 <b>Citation</b></a>
+</p>
 
-![MVCBench Overview](docs/static/images/Fig1.png)
+</div>
 
-**Figure 1.** Overview of MVCBench. The benchmark spans transcriptomic, morphological, and multimodal prediction settings, covering large-scale paired profiles, diverse representation models, and progressive evaluation stages from single-modality prediction to multimodal virtual cell construction.
-
-
-## Key Findings
-
-- Advanced molecular representations are highly beneficial for predicting drug-induced morphological phenotypes, where 3D-aware and deep learning-based encoders consistently outperform classical molecular fingerprints. By contrast, their gains for transcriptomic response prediction are much smaller, suggesting that chemical structure alone may be insufficient to fully explain gene expression responses.
-
-- For transcriptomic prediction, task-specific gene representations show clearer advantages than general-purpose foundation models. This indicates that alignment between representation learning objectives and perturbation-response tasks remains critical, even as single-cell foundation models continue to improve.
-
-- Multimodal integration consistently improves predictive performance over single-modality training. Beyond benchmark scores, MVCBench provides practical guidance for designing multimodal virtual cell systems, including the value of modality-aware optimization and task-dependent fusion strategies.
-
-
-## 🧬 Benchmark Zoo
-
-We evaluate widely used Drug Molecular Representation methods and Gene Representation methods (Single-cell Foundation Models).
-
-### 🧪 Molecule Representation Methods
-
-| Model | Paper | Code | Stars |
-| :--- | :--- | :--- | :--- |
-| **KPGT** | [Nat. Commun. 2023](https://www.nature.com/articles/s41467-023-43214-1) | [GitHub](https://github.com/lihan97/kpgt) | ![Stars](https://img.shields.io/github/stars/lihan97/kpgt.svg?style=social) |
-| **InfoAlign** | [ICLR 2025](https://openreview.net/forum?id=BbZy8nI1si) | [GitHub](https://github.com/liugangcode/InfoAlign) | ![Stars](https://img.shields.io/github/stars/liugangcode/InfoAlign.svg?style=social) |
-| **GeminiMol** | [Adv. Sci. 2024](https://advanced.onlinelibrary.wiley.com/doi/10.1002/advs.202403998) | [GitHub](https://github.com/Wang-Lin-boop/GeminiMol) | ![Stars](https://img.shields.io/github/stars/Wang-Lin-boop/GeminiMol.svg?style=social) |
-| **Ouroboros** | [Adv. Sci. 2026](https://www.biorxiv.org/content/10.1101/2025.03.18.643899v1) | [GitHub](https://github.com/Wang-Lin-boop/ouroboros) | ![Stars](https://img.shields.io/github/stars/Wang-Lin-boop/ouroboros.svg?style=social) |
-| **Mole-BERT** | [ICLR 2023](https://openreview.net/forum?id=jevY-DtiZTR) | [GitHub](https://github.com/junxia97/Mole-BERT) | ![Stars](https://img.shields.io/github/stars/junxia97/Mole-BERT.svg?style=social) |
-| **ChemBERTa2**| [arXiv 2022](https://arxiv.org/abs/2209.01712) | [GitHub](https://github.com/seyonechithrananda/bert-loves-chemistry) | ![Stars](https://img.shields.io/github/stars/seyonechithrananda/bert-loves-chemistry.svg?style=social) |
-| **MolT5** | [EMNLP 2022](https://arxiv.org/abs/2204.11817) | [GitHub](https://github.com/blender-nlp/molt5) | ![Stars](https://img.shields.io/github/stars/blender-nlp/molt5.svg?style=social) |
-| **Chemprop** | [JCIM 2024](https://pubs.acs.org/doi/10.1021/acs.jcim.3c01250) | [GitHub](https://github.com/chemprop/chemprop) | ![Stars](https://img.shields.io/github/stars/chemprop/chemprop.svg?style=social) |
-| **MolCLR** | [Nat. Mach. Intell. 2022](https://www.nature.com/articles/s42256-022-00447-x) | [GitHub](https://github.com/yuyangw/MolCLR) | ![Stars](https://img.shields.io/github/stars/yuyangw/MolCLR.svg?style=social) |
-| **UniMol** | [ICLR 2023](https://openreview.net/forum?id=6K2RM6wVqKu) | [GitHub](https://github.com/deepmodeling/Uni-Mol) | ![Stars](https://img.shields.io/github/stars/deepmodeling/Uni-Mol.svg?style=social) |
-| **UniMol2** | [NIPS 2024](https://openreview.net/forum?id=64V40K2fDv) | [GitHub](https://github.com/deepmodeling/Uni-Mol/tree/main/unimol2) | ![Stars](https://img.shields.io/github/stars/deepmodeling/Uni-Mol.svg?style=social) |
-
-### 🧬 Gene Representation Methods (scFMs)
-
-| Model | Paper | Code | Stars |
-| :--- | :--- | :--- | :--- |
-| **Geneformer** | [Nature 2023](https://www.nature.com/articles/s41586-023-06139-9) | [HuggingFace](https://huggingface.co/ctheodoris/Geneformer) | ⭐ 281 likes|
-| **tGPT** | [bioRxiv 2022](https://www.biorxiv.org/content/10.1101/2022.01.31.478596v1.full) | [GitHub](https://github.com/deeplearningplus/tGPT) | ![Stars](https://img.shields.io/github/stars/deeplearningplus/tGPT.svg?style=social) |
-| **UCE** | [bioRxiv 2023](https://www.biorxiv.org/content/10.1101/2023.11.28.568918v2) | [GitHub](https://github.com/snap-stanford/uce) | ![Stars](https://img.shields.io/github/stars/snap-stanford/uce.svg?style=social) |
-| **scBERT** | [Nat. Mach. Intell. 2022](https://www.nature.com/articles/s42256-022-00534-z) | [GitHub](https://github.com/TencentAILabHealthcare/scBERT) | ![Stars](https://img.shields.io/github/stars/TencentAILabHealthcare/scBERT.svg?style=social) |
-| **CellPLM** | [ICLR 2024](https://openreview.net/forum?id=BKXvPDekud) | [GitHub](https://github.com/OmicsML/CellPLM) | ![Stars](https://img.shields.io/github/stars/OmicsML/CellPLM.svg?style=social) |
-| **OpenBioMed** | [arXiv 2023](https://arxiv.org/pdf/2306.04371) | [GitHub](https://github.com/PharMolix/OpenBioMed) | ![Stars](https://img.shields.io/github/stars/PharMolix/OpenBioMed.svg?style=social) |
-| **scGPT** | [Nat. Methods 2024](https://www.nature.com/articles/s41592-024-02201-0) | [GitHub](https://github.com/bowang-lab/scGPT) | ![Stars](https://img.shields.io/github/stars/bowang-lab/scGPT.svg?style=social) |
-| **scFoundation**| [Nat. Methods 2024](https://www.nature.com/articles/s41592-024-02305-7) | [GitHub](https://github.com/biomap-research/scFoundation)| ![Stars](https://img.shields.io/github/stars/biomap-research/scFoundation.svg?style=social) |
-| **SCimilarity** | [Nature 2025](https://doi.org/10.1038/s41586-024-08411-y) | [GitHub](https://github.com/Genentech/scimilarity) | ![Stars](https://img.shields.io/github/stars/Genentech/scimilarity.svg?style=social) |
-| **Cell2Sentence**| [ICML 2023](https://icml.cc/virtual/2024/poster/34580) | [GitHub](https://github.com/vandijklab/cell2sentence) | ![Stars](https://img.shields.io/github/stars/vandijklab/cell2sentence.svg?style=social) |
-| **STATE** | [bioRxiv 2025](https://www.biorxiv.org/content/10.1101/2025.06.26.661135v2) | [GitHub](https://github.com/ArcInstitute/state) | ![Stars](https://img.shields.io/github/stars/ArcInstitute/state.svg?style=social) |
+> [!IMPORTANT]
+> **Publication status:** MVCBench has been **accepted in principle at *Nature Communications*** (2026). The linked bioRxiv manuscript remains the publicly available preprint; a final journal citation is not yet available.
 
 ---
 
-## 💾 Datasets
+<a id="overview"></a>
+## 🎯 Overview
 
-MVCBench leverages over one million paired observations across transcriptomic and morphological landscapes.
+**MVCBench** systematically studies how **drug molecular** and **gene** representations influence prediction of drug-induced cellular phenotypes across **transcriptomic**, **morphological**, and **multimodal** settings. Rather than declaring one encoder universally best, MVCBench asks **which representation helps a particular readout and how well that advantage generalizes**.
 
-### Gene Expression
-- **[CIGS]** (Nat. Methods 2025) - [Dataset Link](https://cigs.iomicscloud.com/)
-- **[Tahoe-100M]** (bioRxiv 2025) - [HuggingFace](https://huggingface.co/datasets/tahoebio/Tahoe-100M)
-- **[LINCS 2020]** - [Clue.io](https://clue.io/data/CMap2020#LINCS2020)
+<div align="center">
 
-### Cell Morphology
-- **[cpg0016 & cpg0003]** (Cell Painting Gallery) - [AWS Registry](https://registry.opendata.aws/cellpainting-gallery/)
+| 🧫 Drug-induced profiles | 🧪 Molecular representations | 🧬 Gene representations | 🔬 Evaluation stages |
+|:---:|:---:|:---:|:---:|
+| **~1.1 million** | **12** | **12** | **3** |
 
-### Multimodal (Paired)
-- **CDRP-BBBC047-Bray** & **CDRPBIO-BBBC036-Bray** - Available via the [Project](https://www.nature.com/articles/s41592-022-01667-0).
+<a href="https://qsong-github.github.io/MVCBench/"><img src="docs/static/images/Fig1.png" alt="MVCBench overview: data sources, representation benchmarking, and multimodal virtual-cell evaluation" width="940"></a>
 
-The preprocessed dataset used in this paper is available at [MVCBench HuggingFace](https://huggingface.co/datasets/Boom5426/MVCBench).
+<sub><b>Figure 1.</b> MVCBench integrates drug-perturbation resources and evaluates representation choices in a progressive benchmark, from individual response modalities to multimodal modeling. Click the figure to explore the project website.</sub>
 
+</div>
 
----
+> [!NOTE]
+> **What “multimodal” means here:** The transcriptomic and morphological resources are not universally measured in the same cells, plates, or experimental replicates. When readouts come from different experiments, cross-modality correspondence may be established at the **compound level**. Do not interpret the total profile count as same-cell RNA–image pairs.
 
+<a id="findings"></a>
+## ✨ Key Findings
 
-## 🧩 Embedding Extraction
+| | Research question | What MVCBench finds |
+|:---:|---|---|
+| 🧪 | **Do stronger molecular encoders help all phenotypes equally?** | Gains are substantially more pronounced for **morphology prediction** than for **gene-expression prediction**, where simpler fingerprints can remain competitive. |
+| 🧬 | **Are general-purpose gene foundation models always preferable?** | **Task alignment matters.** In the evaluated transcriptomic settings, perturbation-oriented representations can outperform more general encoders. |
+| 🔗 | **Does multimodal training help?** | Joint optimization improves results in the evaluated settings, but the size and interpretation of gains depend on the dataset, readout, and optimization setup. |
+| 🧭 | **What should we learn for future virtual cells?** | Representation selection, generalization splits, loss balancing, and fusion strategy need **modality-aware evaluation**, not a single aggregate ranking. |
 
-MVCBench provides a unified and easy-to-use interface to extract embeddings using state-of-the-art foundation models.
+<details>
+<summary><b>📊 Show supporting results · Molecular representations (Figures 2–3)</b></summary>
 
-### Molecular Embeddings (e.g., UniMol2)
+<p align="center"><img src="docs/static/images/Fig2.png" alt="Figure 2: molecular representations for transcriptomic-response prediction" width="900"></p>
+<p align="center"><sub>Figure 2 · Drug molecular representations for gene-expression prediction.</sub></p>
+<p align="center"><img src="docs/static/images/Fig3.png" alt="Figure 3: molecular representations for morphology prediction" width="900"></p>
+<p align="center"><sub>Figure 3 · Drug molecular representations for cellular morphology prediction.</sub></p>
+</details>
 
-Extract single-cell representations from raw gene expression profiles; please refer to [Get_Molecular_Embedding.ipynb](https://github.com/QSong-github/MVCBench/blob/main/examples/Get_Molecular_Embedding.ipynb).
+<details>
+<summary><b>🧬 Show supporting results · Gene representations (Figure 4)</b></summary>
 
+<p align="center"><img src="docs/static/images/Fig4.png" alt="Figure 4: benchmarking gene representations across transcriptomic settings" width="900"></p>
+<p align="center"><sub>Figure 4 · Gene representation benchmarking across gene-expression prediction settings.</sub></p>
+</details>
 
-### Gene Embeddings (e.g., STATE)
+<details>
+<summary><b>🔗 Show supporting results · Multimodal modeling and design principles (Figures 5–6)</b></summary>
 
-Extract single-cell representations from raw gene expression profiles; please refer to [Get_STATE_Embedding.ipynb](https://github.com/QSong-github/MVCBench/blob/main/examples/Get_STATE_Embedding.ipynb).
+<p align="center"><img src="docs/static/images/Fig5.png" alt="Figure 5: multimodal virtual-cell model comparisons" width="900"></p>
+<p align="center"><sub>Figure 5 · Evaluation of multimodal virtual-cell construction.</sub></p>
+<p align="center"><img src="docs/static/images/Fig6.png" alt="Figure 6: cross-modality analyses, training objectives, and fusion strategies" width="900"></p>
+<p align="center"><sub>Figure 6 · Empirical analyses of multimodal design choices.</sub></p>
+</details>
 
-```python
-inferer.encode_adata( # https://github.com/ArcInstitute/state
-    input_file, 
-    output_file, 
-    emb_key=embed_key, 
-    dataset_name=dataset_name,
-    gene_column=gene_column
-)
+<a id="benchmark-design"></a>
+## 🧭 Benchmark Design
 
-```
+The benchmark follows **three complementary stages** rather than collapsing different prediction questions into one score.
 
+| Stage | Focus | Scientific question | Training entry point |
+|:---:|---|---|---|
+| **A** · 🧪 | **Molecular representation** | Which chemical representations support prediction of drug-induced RNA and morphology? | [`train_gene.py`](train_gene.py), [`train_image.py`](train_image.py) |
+| **B** · 🧬 | **Gene representation** | How do gene encoders affect transcriptomic response prediction? | [`train_gene.py`](train_gene.py) |
+| **C** · 🔗 | **Multimodal virtual cell** | When does joint RNA–morphology learning help, and under which settings? | [`train_mvc.py`](train_mvc.py) |
 
-## <a id="jump-target"></a>🚀 Getting Started
+**Evaluation dimensions:** drug/compound, cellular context, and dataset-dependent generalization; see the [paper](https://www.biorxiv.org/content/10.64898/2026.04.22.720110v1) and [project website](https://qsong-github.github.io/MVCBench/) for the precise protocols and results.
 
-### Installation
+<a id="quickstart"></a>
+## 🚀 Quickstart
+
+### 1️⃣ Set up the environment
 
 ```bash
-# Clone the repository
 git clone https://github.com/QSong-github/MVCBench.git
 cd MVCBench
 
-# Create a virtual environment
-conda create -n mvcbench python=3.11
+conda create -n mvcbench python=3.11 -y
 conda activate mvcbench
-
-# Install dependencies
 pip install -r requirements.txt
-
 ```
 
-### Data organization
+### 2️⃣ Prepare benchmark data and embeddings
 
-MVCBench expects benchmark datasets and precomputed molecular representations to be available under a data root directory. By default, the code looks for data under `./data`. You can also set a custom location by defining the environment variable `VCBENCH_DATA_ROOT`.
+Download the released data from **[🤗 MVCBench on Hugging Face](https://huggingface.co/datasets/Boom5426/MVCBench)**. The loaders expect prepared datasets and, for some settings, precomputed model embeddings. They **do not automatically download every upstream resource**.
 
 ```bash
+# The default data root is ./data
 export VCBENCH_DATA_ROOT=/path/to/MVCBench_data
 ```
 
-The current codebase uses dataset paths defined in `src/configs.py`. In practice, the following resource groups are expected:
+Dataset paths and representation file mappings are defined in [`src/configs.py`](src/configs.py). Typical resource groups include `LINCS2020`, `CIGS`, `Tahoe-100M`, `BBBC036`, `BBBC047`, `cpg0016`, and molecular representations under `Molecular_representations/`.
 
-- transcriptomic datasets such as `LINCS2020`, `CIGS`, and `Tahoe-100M`
-- morphology datasets such as `BBBC036`, `BBBC047`, and `cpg0016`
-- paired multimodal datasets for MVC experiments
-- precomputed molecular embeddings stored under `Molecular_representations/...`
+### 3️⃣ Run a benchmark
 
-The preprocessed benchmark release is available at [MVCBench on Hugging Face](https://huggingface.co/datasets/Boom5426/MVCBench).
-
-
-
-### Main training scripts
-
-The repository currently provides three main training entry points:
-
-- `train_gene.py` for drug-to-gene-expression prediction
-- `train_image.py` for drug-to-morphology prediction
-- `train_mvc.py` for multimodal virtual cell modeling
-
-Batch scripts for running benchmark sweeps are also provided in [scripts/run_gene_batch.sh](/data/boom/Agent/MVCBench/scripts/run_gene_batch.sh), [scripts/run_image_batch.sh](/data/boom/Agent/MVCBench/scripts/run_image_batch.sh), and [scripts/run_mvc_batch.sh](/data/boom/Agent/MVCBench/scripts/run_mvc_batch.sh).
-
-### Example commands
-
-Run a gene expression benchmark:
+<details open>
+<summary><b>🧬 A · Predict gene-expression responses</b></summary>
 
 ```bash
-python3 train_gene.py \
+python train_gene.py \
   --dataset_name LINCS \
   --molecule_feature ECFP4 \
   --gene_encoder_type Default \
@@ -175,10 +151,13 @@ python3 train_gene.py \
   --batch_size 1024
 ```
 
-Run a morphology benchmark:
+</details>
+
+<details>
+<summary><b>🖼️ A · Predict morphological responses</b></summary>
 
 ```bash
-python3 train_image.py \
+python train_image.py \
   --dataset_name cpg0016 \
   --molecule_feature ECFP4 \
   --image_encoder_type Default \
@@ -187,10 +166,13 @@ python3 train_image.py \
   --batch_size 1024
 ```
 
-Run a multimodal virtual cell benchmark:
+</details>
+
+<details>
+<summary><b>🔗 C · Train a multimodal virtual cell</b></summary>
 
 ```bash
-python3 train_mvc.py \
+python train_mvc.py \
   --dataset_name MVC_BBBC047 \
   --molecule_feature ECFP4 \
   --split_data_type smiles_split \
@@ -198,25 +180,100 @@ python3 train_mvc.py \
   --batch_size 1024
 ```
 
-### Outputs
+</details>
 
-Training outputs are written under the `results/` directory by default. Depending on the task, the code will save:
+> [!TIP]
+> These commands use **2 epochs as a smoke-test configuration**, not the training budget for reproducing published benchmark results. Supply the corresponding prepared datasets and embeddings before running. The training scripts use CUDA by default; check `--device` and available hardware as needed.
 
-- model checkpoints such as `best_model.pt`
-- per-sample evaluation tables in CSV format
-- predicted profiles in HDF5 format when prediction export is enabled
+### 4️⃣ Inspect outputs
 
-### Notes
+By default, training writes to `results/`, including model checkpoints (e.g., `best_model.pt`), per-sample evaluation tables (`.csv`), and predicted profiles (`.h5`) when profile export is enabled.
 
-- Example notebooks for representation extraction are available in [examples/Get_Molecular_Embedding.ipynb](https://github.com/QSong-github/MVCBench/blob/main/examples/Get_Molecular_Embedding.ipynb) and [examples/Get_STATE_Embedding.ipynb](https://github.com/QSong-github/MVCBench/blob/main/examples/Get_STATE_Embedding.ipynb).
-- Dataset names, file mappings, and embedding filenames are configured in [src/configs.py](/data/boom/Agent/MVCBench/src/configs.py).
+For benchmark sweeps, see the batch launchers:
 
+- 🧬 [`scripts/run_gene_batch.sh`](scripts/run_gene_batch.sh)
+- 🖼️ [`scripts/run_image_batch.sh`](scripts/run_image_batch.sh)
+- 🔗 [`scripts/run_mvc_batch.sh`](scripts/run_mvc_batch.sh)
 
----
+<a id="model-zoo"></a>
+## 🧰 Representation Zoo
 
-## 🖊️ Citation
+MVCBench evaluates **12 molecular** and **12 gene representation approaches** in the paper. The reference tables below highlight linked implementations (not a complete model inventory); availability and reproducibility may depend on upstream projects.
 
-If you find MVCBench useful for your research, please cite our paper:
+<details>
+<summary><b>🧪 Molecular representations · View model reference table</b></summary>
+
+| Model | Reference | Implementation |
+|:---|:---|:---|
+| **KPGT** | [Nature Communications · 2023](https://www.nature.com/articles/s41467-023-43214-1) | [<img src="https://img.shields.io/github/stars/lihan97/kpgt?style=social" alt="KPGT GitHub stars">](https://github.com/lihan97/kpgt) |
+| **InfoAlign** | [ICLR · 2025](https://openreview.net/forum?id=BbZy8nI1si) | [<img src="https://img.shields.io/github/stars/liugangcode/InfoAlign?style=social" alt="InfoAlign GitHub stars">](https://github.com/liugangcode/InfoAlign) |
+| **GeminiMol** | [Advanced Science · 2024](https://advanced.onlinelibrary.wiley.com/doi/10.1002/advs.202403998) | [<img src="https://img.shields.io/github/stars/Wang-Lin-boop/GeminiMol?style=social" alt="GeminiMol GitHub stars">](https://github.com/Wang-Lin-boop/GeminiMol) |
+| **Ouroboros** | [Preprint](https://www.biorxiv.org/content/10.1101/2025.03.18.643899v1) | [<img src="https://img.shields.io/github/stars/Wang-Lin-boop/ouroboros?style=social" alt="Ouroboros GitHub stars">](https://github.com/Wang-Lin-boop/ouroboros) |
+| **Mole-BERT** | [ICLR · 2023](https://openreview.net/forum?id=jevY-DtiZTR) | [<img src="https://img.shields.io/github/stars/junxia97/Mole-BERT?style=social" alt="Mole-BERT GitHub stars">](https://github.com/junxia97/Mole-BERT) |
+| **ChemBERTa2** | [arXiv · 2022](https://arxiv.org/abs/2209.01712) | [<img src="https://img.shields.io/github/stars/seyonechithrananda/bert-loves-chemistry?style=social" alt="ChemBERTa2 GitHub stars">](https://github.com/seyonechithrananda/bert-loves-chemistry) |
+| **MolT5** | [EMNLP · 2022](https://arxiv.org/abs/2204.11817) | [<img src="https://img.shields.io/github/stars/blender-nlp/molt5?style=social" alt="MolT5 GitHub stars">](https://github.com/blender-nlp/molt5) |
+| **Chemprop** | [JCIM · 2024](https://pubs.acs.org/doi/10.1021/acs.jcim.3c01250) | [<img src="https://img.shields.io/github/stars/chemprop/chemprop?style=social" alt="Chemprop GitHub stars">](https://github.com/chemprop/chemprop) |
+| **MolCLR** | [Nature Machine Intelligence · 2022](https://www.nature.com/articles/s42256-022-00447-x) | [<img src="https://img.shields.io/github/stars/yuyangw/MolCLR?style=social" alt="MolCLR GitHub stars">](https://github.com/yuyangw/MolCLR) |
+| **UniMol** | [ICLR · 2023](https://openreview.net/forum?id=6K2RM6wVqKu) | [<img src="https://img.shields.io/github/stars/deepmodeling/Uni-Mol?style=social" alt="UniMol GitHub stars">](https://github.com/deepmodeling/Uni-Mol) |
+| **UniMol2** | [NeurIPS · 2024](https://openreview.net/forum?id=64V40K2fDv) | [<img src="https://img.shields.io/github/stars/deepmodeling/Uni-Mol?style=social" alt="UniMol2 GitHub stars">](https://github.com/deepmodeling/Uni-Mol/tree/main/unimol2) |
+
+</details>
+
+<details>
+<summary><b>🧬 Gene representations · View model reference table</b></summary>
+
+| Model | Reference | Implementation |
+|:---|:---|:---|
+| **Geneformer** | [Nature · 2023](https://www.nature.com/articles/s41586-023-06139-9) | [🤗 Hugging Face](https://huggingface.co/ctheodoris/Geneformer) |
+| **tGPT** | [bioRxiv · 2022](https://www.biorxiv.org/content/10.1101/2022.01.31.478596v1.full) | [<img src="https://img.shields.io/github/stars/deeplearningplus/tGPT?style=social" alt="tGPT GitHub stars">](https://github.com/deeplearningplus/tGPT) |
+| **UCE** | [bioRxiv · 2023](https://www.biorxiv.org/content/10.1101/2023.11.28.568918v2) | [<img src="https://img.shields.io/github/stars/snap-stanford/uce?style=social" alt="UCE GitHub stars">](https://github.com/snap-stanford/uce) |
+| **scBERT** | [Nature Machine Intelligence · 2022](https://www.nature.com/articles/s42256-022-00534-z) | [<img src="https://img.shields.io/github/stars/TencentAILabHealthcare/scBERT?style=social" alt="scBERT GitHub stars">](https://github.com/TencentAILabHealthcare/scBERT) |
+| **CellPLM** | [ICLR · 2024](https://openreview.net/forum?id=BKXvPDekud) | [<img src="https://img.shields.io/github/stars/OmicsML/CellPLM?style=social" alt="CellPLM GitHub stars">](https://github.com/OmicsML/CellPLM) |
+| **OpenBioMed** | [arXiv · 2023](https://arxiv.org/pdf/2306.04371) | [<img src="https://img.shields.io/github/stars/PharMolix/OpenBioMed?style=social" alt="OpenBioMed GitHub stars">](https://github.com/PharMolix/OpenBioMed) |
+| **scGPT** | [Nature Methods · 2024](https://www.nature.com/articles/s41592-024-02201-0) | [<img src="https://img.shields.io/github/stars/bowang-lab/scGPT?style=social" alt="scGPT GitHub stars">](https://github.com/bowang-lab/scGPT) |
+| **scFoundation** | [Nature Methods · 2024](https://www.nature.com/articles/s41592-024-02305-7) | [<img src="https://img.shields.io/github/stars/biomap-research/scFoundation?style=social" alt="scFoundation GitHub stars">](https://github.com/biomap-research/scFoundation) |
+| **SCimilarity** | [Nature · 2025](https://doi.org/10.1038/s41586-024-08411-y) | [<img src="https://img.shields.io/github/stars/Genentech/scimilarity?style=social" alt="SCimilarity GitHub stars">](https://github.com/Genentech/scimilarity) |
+| **Cell2Sentence** | [ICML](https://icml.cc/virtual/2024/poster/34580) | [<img src="https://img.shields.io/github/stars/vandijklab/cell2sentence?style=social" alt="Cell2Sentence GitHub stars">](https://github.com/vandijklab/cell2sentence) |
+| **STATE** | [bioRxiv · 2025](https://www.biorxiv.org/content/10.1101/2025.06.26.661135v2) | [<img src="https://img.shields.io/github/stars/ArcInstitute/state?style=social" alt="STATE GitHub stars">](https://github.com/ArcInstitute/state) |
+
+</details>
+
+<a id="datasets"></a>
+## 🗃️ Datasets
+
+| Modality | Data sources | Access |
+|:---|---|---|
+| 🧬 **Transcriptomics** | CIGS · Tahoe-100M · LINCS 2020 | [CIGS](https://cigs.iomicscloud.com/) · [Tahoe](https://huggingface.co/datasets/tahoebio/Tahoe-100M) · [LINCS](https://clue.io/data/CMap2020#LINCS2020) |
+| 🖼️ **Cell morphology** | Cell Painting Gallery (`cpg0016`, `cpg0003`) | [AWS Open Data](https://registry.opendata.aws/cellpainting-gallery/) |
+| 🔗 **Multimodal datasets** | CDRP-BBBC047-Bray · CDRPBIO-BBBC036-Bray | [Data resource reference](https://www.nature.com/articles/s41592-022-01667-0) |
+| 📦 **Processed release** | MVCBench benchmark data | [🤗 Hugging Face](https://huggingface.co/datasets/Boom5426/MVCBench) |
+
+*Cross-modal correspondence and experimental pairing should be interpreted at the level supported by each dataset, not assumed to mean same-cell image–RNA measurements.*
+
+<a id="embeddings"></a>
+## 🧩 Embedding Extraction
+
+| Representation | Notebook / code | Description |
+|:---|---|---|
+| 🧪 **Molecular** (e.g., UniMol2) | [`Get_Molecular_Embedding.ipynb`](examples/Get_Molecular_Embedding.ipynb) | Generate compound/molecular representations for benchmark inputs. |
+| 🧬 **Gene** (e.g., STATE) | [`Get_STATE_Embedding.ipynb`](examples/Get_STATE_Embedding.ipynb) | Compute gene-expression/cellular representations with the corresponding upstream model. |
+
+For STATE, the upstream interface includes the following call (see the linked notebook for setup and actual parameters):
+
+```python
+inferer.encode_adata(  # https://github.com/ArcInstitute/state
+    input_file,
+    output_file,
+    emb_key=embed_key,
+    dataset_name=dataset_name,
+    gene_column=gene_column,
+)
+```
+
+<a id="citation"></a>
+## 📖 Citation
+
+If MVCBench supports your research, please cite the **publicly available preprint** until the final journal record is published.
 
 ```bibtex
 @article{li2026mvcbench,
@@ -226,15 +283,19 @@ If you find MVCBench useful for your research, please cite our paper:
   year    = {2026},
   doi     = {10.64898/2026.04.22.720110},
   url     = {https://www.biorxiv.org/content/10.64898/2026.04.22.720110v1},
-  note    = {Preprint, version 1}
+  note    = {Preprint; accepted in principle at Nature Communications}
 }
-
 ```
 
-## 📧 Contact
+<a id="contact"></a>
+## 💬 Contact & Support
 
-For any questions or inquiries, please open an issue or contact:
+For questions, dataset access, or reproducibility issues, please [**open a GitHub issue**](https://github.com/QSong-github/MVCBench/issues).
 
-* **Bo Li**: Boom985426@gmail.com
-* **Bob Zhang**: bobzhang@um.edu.mo
-* **Qianqian Song**: qsong1@ufl.edu
+- 👤 **Bo Li** — [Boom985426@gmail.com](mailto:Boom985426@gmail.com)
+- 👤 **Bob Zhang** — [bobzhang@um.edu.mo](mailto:bobzhang@um.edu.mo)
+- 👤 **Qianqian Song** — [qsong1@ufl.edu](mailto:qsong1@ufl.edu)
+
+<div align="center">
+  <sub>🧬 MVCBench · Multimodal virtual cells · Reproducible representation benchmarking</sub>
+</div>
