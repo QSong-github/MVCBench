@@ -286,14 +286,4 @@ If MVCBench supports your research, please cite the **publicly available preprin
 ```
 
 <a id="contact"></a>
-## 💬 Contact & Support
 
-For questions, dataset access, or reproducibility issues, please [**open a GitHub issue**](https://github.com/QSong-github/MVCBench/issues).
-
-- 👤 **Bo Li** — [Boom985426@gmail.com](mailto:Boom985426@gmail.com)
-- 👤 **Bob Zhang** — [bobzhang@um.edu.mo](mailto:bobzhang@um.edu.mo)
-- 👤 **Qianqian Song** — [qsong1@ufl.edu](mailto:qsong1@ufl.edu)
-
-<div align="center">
-  <sub>🧬 MVCBench · Multimodal virtual cells · Reproducible representation benchmarking</sub>
-</div>
