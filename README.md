@@ -38,8 +38,6 @@
 
 </div>
 
-> [!IMPORTANT]
-> **Publication status:** MVCBench has been **accepted in principle at *Nature Communications*** (2026). The linked bioRxiv manuscript remains the publicly available preprint; a final journal citation is not yet available.
 
 ---
 
