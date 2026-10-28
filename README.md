@@ -23,6 +23,7 @@
 
 <p>
   <img src="https://img.shields.io/badge/Nature_Communications-Accepted_in_Principle-2B807C?style=flat-square" alt="Nature Communications accepted in principle">
+  <a href="https://doi.org/10.5281/zenodo.23733476"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.23733476.svg" alt="DOI"></a>
   <a href="https://www.python.org/"><img src="https://img.shields.io/badge/Python-3.11%2B-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python 3.11+"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-6B7280?style=flat-square&logo=opensourceinitiative&logoColor=white" alt="MIT license"></a>
   <a href="https://github.com/QSong-github/MVCBench/stargazers"><img src="https://img.shields.io/github/stars/QSong-github/MVCBench?style=flat-square&logo=github" alt="GitHub stars"></a>
